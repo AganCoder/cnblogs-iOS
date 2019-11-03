@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zu8-tm-KU7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="mrf-ZC-IbG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Page View Controller-->
-        <scene sceneID="UWU-kt-bd3">
+        <!--Main View Controller-->
+        <scene sceneID="6On-0j-cXt">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="zu8-tm-KU7" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fLT-x9-fMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="mrf-ZC-IbG" customClass="MainViewController" customModule="CnBlogs_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rTC-AV-nYs"/>
+                        <viewControllerLayoutGuide type="bottom" id="VK7-s9-Rjk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fhK-FB-0K3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ju-Vd-aVF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <segue destination="SZP-jR-VP0" kind="embed" identifier="pageViewControllerIdentifier" id="eM6-Qa-Fyf"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VK7-s9-Rjk" firstAttribute="top" secondItem="0ju-Vd-aVF" secondAttribute="bottom" id="Atf-yb-LbC"/>
+                            <constraint firstAttribute="trailing" secondItem="0ju-Vd-aVF" secondAttribute="trailing" id="XdS-zl-OSX"/>
+                            <constraint firstItem="0ju-Vd-aVF" firstAttribute="top" secondItem="rTC-AV-nYs" secondAttribute="bottom" id="r7N-hH-6Ai"/>
+                            <constraint firstItem="0ju-Vd-aVF" firstAttribute="leading" secondItem="fhK-FB-0K3" secondAttribute="leading" id="uLF-98-GIG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jp4-Kf-IZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="-105"/>
+            <point key="canvasLocation" x="-1561" y="-429"/>
+        </scene>
+        <!--Blog View Controller-->
+        <scene sceneID="zKS-F9-NZg">
+            <objects>
+                <viewController storyboardIdentifier="BlogViewController" id="6Qc-QL-pxt" customClass="BlogViewController" customModule="CnBlogs_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mOR-3B-K1k"/>
+                        <viewControllerLayoutGuide type="bottom" id="bTk-8n-8FN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0RS-rD-Nqc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-L5-nh8">
+                                <rect key="frame" x="121" y="103" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcp-dM-EYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1576" y="223"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="A6Z-ZK-i0L">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="SZP-jR-VP0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1t-xv-MJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-787" y="-429"/>
         </scene>
     </scenes>
 </document>
