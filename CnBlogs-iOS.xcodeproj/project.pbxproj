@@ -17,6 +17,7 @@
 		844183B4236F255F006C344F /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183B3236F255F006C344F /* KnowledgeViewController.swift */; };
 		844183B6236F258C006C344F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183B5236F258C006C344F /* ComposeViewController.swift */; };
 		844183B8236F25B2006C344F /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183B7236F25B2006C344F /* ProblemViewController.swift */; };
+		844183BA23707A24006C344F /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183B923707A24006C344F /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		844183B3236F255F006C344F /* KnowledgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		844183B5236F258C006C344F /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		844183B7236F25B2006C344F /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
+		844183B923707A24006C344F /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				8416AC64236DD7F9003BF380 /* AppDelegate.swift */,
 				8416AC6A236DD7F9003BF380 /* Main.storyboard */,
+				844183B923707A24006C344F /* Array+Extensions.swift */,
 				844183AF236F24F1006C344F /* BlogViewController.swift */,
 				844183B1236F2510006C344F /* NewsViewController.swift */,
 				844183B3236F255F006C344F /* KnowledgeViewController.swift */,
@@ -153,6 +156,7 @@
 				844183B8236F25B2006C344F /* ProblemViewController.swift in Sources */,
 				844183AE236F1C9F006C344F /* MainViewController.swift in Sources */,
 				8416AC65236DD7F9003BF380 /* AppDelegate.swift in Sources */,
+				844183BA23707A24006C344F /* Array+Extensions.swift in Sources */,
 				844183B0236F24F1006C344F /* BlogViewController.swift in Sources */,
 				844183B6236F258C006C344F /* ComposeViewController.swift in Sources */,
 				844183B2236F2510006C344F /* NewsViewController.swift in Sources */,

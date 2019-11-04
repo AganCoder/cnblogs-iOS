@@ -16,28 +16,50 @@ extension UIStoryboard {
 
 class MainViewController: UIViewController {
     
-    var pageViewController: UIPageViewController!
+    var pageViewController: UIPageViewController! {
+        didSet {
+            pageViewController.delegate = self
+            pageViewController.dataSource = self
+        }
+    }
+    
+    var controllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        
+        let blog = BlogViewController.make()
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = .blue
+        
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = .blue
+        
+        controllers = [blog, vc1, vc2]
+                
+        configPageViewController()
+        
+        let edgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(MainViewController.screenEdgePanGestureDidRecognize(gesture:)))
+        edgePanGesture.edges = .left
+        self.view.addGestureRecognizer(edgePanGesture)
+    }
+    
+    private func configPageViewController() {
+        for view in self.pageViewController.view.subviews where view is UIScrollView {
+            if let scrollView = view as? UIScrollView {
+                scrollView.isScrollEnabled = false
+            }
+        }
+        
+        self.pageViewController.setViewControllers([controllers.first!], direction: .forward, animated: false, completion: nil)
+    }
 
-    }
-    
-    private func setupUI() {
-        self.pageViewController.setViewControllers([BlogViewController.make()], direction: .forward, animated: false, completion: nil)//        self.pageViewController.viewControllers = [BlogViewController.make()]
-//        let controller =  as UIViewController
-    
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
         case "pageViewControllerIdentifier":
             guard let destination = segue.destination as? UIPageViewController else { return }
-            destination.delegate = self
-            destination.dataSource = self
             self.pageViewController = destination
             
         default:
@@ -45,23 +67,27 @@ class MainViewController: UIViewController {
         }
         
     }
+    
+    @objc func screenEdgePanGestureDidRecognize(gesture: UIScreenEdgePanGestureRecognizer) {
+        print("Pan")
+    }
 }
 
 extension MainViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return BlogViewController.make()
-//        return self.pageViewController.viewControllers?.first
-//        guard let conntroller = viewController as? AnyProgrammeViewController, let index = self.viewControllers.firstIndex(where: { $0.type == conntroller.type }) else { return nil }
-//        return self.viewControllers.object(at: index - 1)
+        guard let index = controllers.firstIndex(of: viewController), let vc = controllers.object(at: index - 1) else {
+            return nil
+        }
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = controllers.firstIndex(of: viewController), let vc = controllers.object(at: index + 1) else {
+            return nil
+        }
+        return vc
         
-        return BlogViewController.make()
-//        guard let controller = viewController as? AnyProgrammeViewController, let index = self.viewControllers.firstIndex(where: { $0.type == controller.type }) else { return nil }
-//
-//        return self.viewControllers.object(at: index+1)
     }
 }
 
