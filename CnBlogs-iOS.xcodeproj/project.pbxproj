@@ -22,7 +22,7 @@
 		844183C723707F6A006C344F /* CNBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; };
 		844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		844183CE23707FFF006C344F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183CD23707FFF006C344F /* SideViewController.swift */; };
-		84B769BC237C56CE006E2223 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B769BB237C56CE006E2223 /* WebViewController.swift */; };
+		84B769BC237C56CE006E2223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B769BB237C56CE006E2223 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 		844183C223707F6A006C344F /* CNBlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNBlog.h; sourceTree = "<group>"; };
 		844183C323707F6A006C344F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844183CD23707FFF006C344F /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
-		84B769BB237C56CE006E2223 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		84B769BB237C56CE006E2223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			children = (
 				8416AC64236DD7F9003BF380 /* AppDelegate.swift */,
 				8416AC6A236DD7F9003BF380 /* Main.storyboard */,
-				84B769BB237C56CE006E2223 /* WebViewController.swift */,
+				84B769BB237C56CE006E2223 /* LoginViewController.swift */,
 				844183CD23707FFF006C344F /* SideViewController.swift */,
 				844183B923707A24006C344F /* Array+Extensions.swift */,
 				844183AF236F24F1006C344F /* BlogViewController.swift */,
@@ -253,7 +253,7 @@
 				844183B8236F25B2006C344F /* ProblemViewController.swift in Sources */,
 				844183AE236F1C9F006C344F /* MainViewController.swift in Sources */,
 				844183CE23707FFF006C344F /* SideViewController.swift in Sources */,
-				84B769BC237C56CE006E2223 /* WebViewController.swift in Sources */,
+				84B769BC237C56CE006E2223 /* LoginViewController.swift in Sources */,
 				8416AC65236DD7F9003BF380 /* AppDelegate.swift in Sources */,
 				844183BA23707A24006C344F /* Array+Extensions.swift in Sources */,
 				844183B0236F24F1006C344F /* BlogViewController.swift in Sources */,

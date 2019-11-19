@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
         self.view.addGestureRecognizer(edgePanGesture)
     }
     @IBAction func login(_ sender: Any) {
-        let webView = WebViewController()
+        let webView = LoginViewController()
         
         self.navigationController?.pushViewController(webView, animated: true)
     }
