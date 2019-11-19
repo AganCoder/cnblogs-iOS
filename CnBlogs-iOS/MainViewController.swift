@@ -28,6 +28,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
         let blog = BlogViewController.make()
         let vc1 = UIViewController()
         vc1.view.backgroundColor = .blue
@@ -43,6 +46,11 @@ class MainViewController: UIViewController {
         edgePanGesture.edges = .left
         self.view.addGestureRecognizer(edgePanGesture)
     }
+    @IBAction func login(_ sender: Any) {
+        let webView = WebViewController()
+        
+        self.navigationController?.pushViewController(webView, animated: true)
+    }
     
     private func configPageViewController() {
         for view in self.pageViewController.view.subviews where view is UIScrollView {
@@ -50,10 +58,9 @@ class MainViewController: UIViewController {
                 scrollView.isScrollEnabled = false
             }
         }
-        
         self.pageViewController.setViewControllers([controllers.first!], direction: .forward, animated: false, completion: nil)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
@@ -69,9 +76,12 @@ class MainViewController: UIViewController {
     }
     
     @objc func screenEdgePanGestureDidRecognize(gesture: UIScreenEdgePanGestureRecognizer) {
-        print("Pan")
+        let sideViewController = SideViewController.make()
+        present(sideViewController, animated: true, completion: nil)
+        
     }
 }
+
 
 extension MainViewController: UIPageViewControllerDataSource {
     

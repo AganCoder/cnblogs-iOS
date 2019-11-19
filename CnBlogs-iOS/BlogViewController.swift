@@ -10,7 +10,7 @@ import UIKit
 
 extension BlogViewController {
     static func make() -> BlogViewController {
-        return UIStoryboard.main.instantiateViewController(withIdentifier: "\(BlogViewController.self)") as! BlogViewController
+        return UIStoryboard.main.instantiateViewController(withIdentifier: "BlogViewController") as! BlogViewController
     }
 }
 
