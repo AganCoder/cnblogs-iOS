@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController {
     
     var webView: WKWebView? {
         didSet {
@@ -21,14 +21,14 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         webView = WKWebView(frame: view.bounds)
         view.addSubview(webView!)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if self.isMovingToParent {

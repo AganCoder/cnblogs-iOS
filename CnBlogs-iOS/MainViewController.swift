@@ -8,6 +8,7 @@
 
 import UIKit
 import Blog
+import Login
 
 extension UIStoryboard {
     static var main: UIStoryboard {

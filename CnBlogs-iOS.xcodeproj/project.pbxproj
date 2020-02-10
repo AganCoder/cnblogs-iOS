@@ -17,7 +17,6 @@
 		844183C723707F6A006C344F /* CNBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; };
 		844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		844183CE23707FFF006C344F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183CD23707FFF006C344F /* SideViewController.swift */; };
-		84B769BC237C56CE006E2223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B769BB237C56CE006E2223 /* LoginViewController.swift */; };
 		8FA8AE3D23F12CD500BCED44 /* Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3823F12CD500BCED44 /* Blog.framework */; };
 		8FA8AE3E23F12CD500BCED44 /* Blog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3823F12CD500BCED44 /* Blog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3923F12CD500BCED44 /* Compose.framework */; };
@@ -28,6 +27,8 @@
 		8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3B23F12CD500BCED44 /* News.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; };
 		8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FA8AE5F23F1310500BCED44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE5E23F1310500BCED44 /* Login.framework */; };
+		8FA8AE6023F1310500BCED44 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE5E23F1310500BCED44 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 			files = (
 				8FA8AE3E23F12CD500BCED44 /* Blog.framework in Embed Frameworks */,
 				844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */,
+				8FA8AE6023F1310500BCED44 /* Login.framework in Embed Frameworks */,
 				8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */,
 				8FA8AE4023F12CD500BCED44 /* Compose.framework in Embed Frameworks */,
 				8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */,
@@ -72,12 +74,12 @@
 		844183C223707F6A006C344F /* CNBlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNBlog.h; sourceTree = "<group>"; };
 		844183C323707F6A006C344F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844183CD23707FFF006C344F /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
-		84B769BB237C56CE006E2223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8FA8AE3823F12CD500BCED44 /* Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3923F12CD500BCED44 /* Compose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Compose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Knowledge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3B23F12CD500BCED44 /* News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3C23F12CD500BCED44 /* Problem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Problem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FA8AE5E23F1310500BCED44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			files = (
 				8FA8AE3D23F12CD500BCED44 /* Blog.framework in Frameworks */,
 				844183C723707F6A006C344F /* CNBlog.framework in Frameworks */,
+				8FA8AE5F23F1310500BCED44 /* Login.framework in Frameworks */,
 				8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */,
 				8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */,
 				8FA8AE4323F12CD500BCED44 /* News.framework in Frameworks */,
@@ -128,7 +131,6 @@
 			children = (
 				8416AC64236DD7F9003BF380 /* AppDelegate.swift */,
 				8416AC6A236DD7F9003BF380 /* Main.storyboard */,
-				84B769BB237C56CE006E2223 /* LoginViewController.swift */,
 				844183CD23707FFF006C344F /* SideViewController.swift */,
 				844183B923707A24006C344F /* Array+Extensions.swift */,
 				844183AD236F1C9F006C344F /* MainViewController.swift */,
@@ -151,6 +153,7 @@
 		8FA8AE3723F12CD500BCED44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FA8AE5E23F1310500BCED44 /* Login.framework */,
 				8FA8AE3823F12CD500BCED44 /* Blog.framework */,
 				8FA8AE3923F12CD500BCED44 /* Compose.framework */,
 				8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */,
@@ -275,7 +278,6 @@
 			files = (
 				844183AE236F1C9F006C344F /* MainViewController.swift in Sources */,
 				844183CE23707FFF006C344F /* SideViewController.swift in Sources */,
-				84B769BC237C56CE006E2223 /* LoginViewController.swift in Sources */,
 				8416AC65236DD7F9003BF380 /* AppDelegate.swift in Sources */,
 				844183BA23707A24006C344F /* Array+Extensions.swift in Sources */,
 			);
@@ -368,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

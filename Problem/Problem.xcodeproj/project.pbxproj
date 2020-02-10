@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8FA8AE2023F12C6200BCED44 /* Problem.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8AE1E23F12C6200BCED44 /* Problem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FA8AE2723F12C6700BCED44 /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE2623F12C6700BCED44 /* ProblemViewController.swift */; };
 		8FA8AE2A23F12C9A00BCED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE2923F12C9A00BCED44 /* UIKit.framework */; platformFilter = ios; };
+		8FA8AE6223F1318400BCED44 /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE6123F1318400BCED44 /* ProblemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8FA8AE1B23F12C6200BCED44 /* Problem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Problem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE1E23F12C6200BCED44 /* Problem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
 		8FA8AE1F23F12C6200BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FA8AE2623F12C6700BCED44 /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		8FA8AE2923F12C9A00BCED44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8FA8AE6123F1318400BCED44 /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,9 @@
 		8FA8AE1D23F12C6200BCED44 /* Problem */ = {
 			isa = PBXGroup;
 			children = (
-				8FA8AE2623F12C6700BCED44 /* ProblemViewController.swift */,
 				8FA8AE1E23F12C6200BCED44 /* Problem.h */,
 				8FA8AE1F23F12C6200BCED44 /* Info.plist */,
+				8FA8AE6123F1318400BCED44 /* ProblemViewController.swift */,
 			);
 			path = Problem;
 			sourceTree = "<group>";
@@ -110,6 +110,7 @@
 				TargetAttributes = {
 					8FA8AE1A23F12C6200BCED44 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -146,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8AE2723F12C6700BCED44 /* ProblemViewController.swift in Sources */,
+				8FA8AE6223F1318400BCED44 /* ProblemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +277,7 @@
 		8FA8AE2423F12C6200BCED44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -291,6 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.Problem;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,6 +302,7 @@
 		8FA8AE2523F12C6200BCED44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

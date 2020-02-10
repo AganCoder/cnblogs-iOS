@@ -8,6 +8,9 @@
       location = "container:"
       name = "Feature">
       <FileRef
+         location = "group:Login/Login.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Problem/Problem.xcodeproj">
       </FileRef>
       <FileRef
