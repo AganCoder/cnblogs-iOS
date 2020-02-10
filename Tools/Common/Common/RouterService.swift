@@ -25,17 +25,24 @@ public final class RouterService: Dependency {
         store.register(dependency)
     }
     
-    func navigate<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
+    func featureViewController<T: Feature>(forFeature: T.Type) -> UIViewController {
         let deps = T.dependenciesInitializer.build(store) as! T.Dependencies
         let viewController = T.build(dependencies: deps)
+        return viewController
+    }
+    
+    func navigate<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
+        let viewController = featureViewController(forFeature: toFeature)
         viewController.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func present<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
-        let deps = T.dependenciesInitializer.build(store) as! T.Dependencies
-        let viewController = T.build(dependencies: deps)
+        let viewController = featureViewController(forFeature: toFeature)
         viewController.present(viewController, animated: true, completion: nil)
     }
+    
+    
+    
 }
 
 public final class Store {
