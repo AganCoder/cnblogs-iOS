@@ -1,5 +1,5 @@
 //
-//  ComposeViewController.swift
+//  BlogViewController.swift
 //  CnBlogs-iOS
 //
 //  Created by enjoy on 2019/11/3.
@@ -8,9 +8,15 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+public extension BlogViewController {
+    static func make() -> BlogViewController {
+        return BlogViewController()
+    }
+}
 
-    override func viewDidLoad() {
+public class BlogViewController: UIViewController {
+
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Blog
 
 extension UIStoryboard {
     static var main: UIStoryboard {
@@ -27,10 +28,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
+                                
         let blog = BlogViewController.make()
         let vc1 = UIViewController()
         vc1.view.backgroundColor = .blue
