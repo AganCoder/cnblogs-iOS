@@ -1,0 +1,6 @@
+framework module Pods_CnBlogs_iOS {
+  umbrella header "Pods-CnBlogs-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

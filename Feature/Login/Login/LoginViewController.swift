@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import Common
+import Alamofire
 
 
 public class LoginFeature: Feature {
@@ -40,6 +41,11 @@ public class LoginViewController: UIViewController {
                 
         webView = WKWebView(frame: view.bounds)
         view.addSubview(webView!)
+        
+        Alamofire.request("https://www.baidu.com").responseData { (resp) in
+            debugPrint(resp)
+        }
+            
     }
     
     override public func viewDidAppear(_ animated: Bool) {

@@ -10,6 +10,7 @@ import UIKit
 import Blog
 import Login
 import Common
+import Compose
 
 extension UIStoryboard {
     static var main: UIStoryboard {
@@ -31,7 +32,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                                 
-        let blog = BlogViewController.make()
+        let blog = ComposeViewController()
         let vc1 = UIViewController()
         vc1.view.backgroundColor = .blue
         
@@ -50,8 +51,6 @@ class MainViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
                 
         RouterService.shared.navigate(toFeature: LoginFeature.self, fromView: self)
-
-
     }
     
     private func configPageViewController() {

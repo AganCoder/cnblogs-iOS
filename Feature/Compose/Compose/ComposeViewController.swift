@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
-class ComposeViewController: UIViewController {
+public class ComposeViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
+//        Alamofire.request("https://www.baidu.com")
+        
         // Do any additional setup after loading the view.
     }
     

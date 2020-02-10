@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29DC1747601C48AAE475DC83 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E8BA4074E68F1311D6D1F /* Pods_Login.framework */; };
 		8FA8AE5623F130DE00BCED44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8AE5423F130DE00BCED44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FA8AE5D23F130E400BCED44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE5C23F130E400BCED44 /* LoginViewController.swift */; };
 		8FA8AE9B23F13F0B00BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE9A23F13F0B00BCED44 /* Common.framework */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		421E8BA4074E68F1311D6D1F /* Pods_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0A766A7FE7609AF001DCFA /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
 		8FA8AE5123F130DE00BCED44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE5423F130DE00BCED44 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		8FA8AE5523F130DE00BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		8FA8AE9A23F13F0B00BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE9E23F13F1B00BCED44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8FA8AEA023F13F2200BCED44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E223CBB73F734C617469805C /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,18 +51,30 @@
 				8FA8AE9B23F13F0B00BCED44 /* Common.framework in Frameworks */,
 				8FA8AEA123F13F2200BCED44 /* Foundation.framework in Frameworks */,
 				8FA8AE9F23F13F1B00BCED44 /* UIKit.framework in Frameworks */,
+				29DC1747601C48AAE475DC83 /* Pods_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44DDDC7E40A2B7DD1CA4CCCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E223CBB73F734C617469805C /* Pods-Login.debug.xcconfig */,
+				5B0A766A7FE7609AF001DCFA /* Pods-Login.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../Pods;
+			sourceTree = "<group>";
+		};
 		8FA8AE4723F130DE00BCED44 = {
 			isa = PBXGroup;
 			children = (
 				8FA8AE5323F130DE00BCED44 /* Login */,
 				8FA8AE5223F130DE00BCED44 /* Products */,
 				8FA8AE9923F13F0B00BCED44 /* Frameworks */,
+				44DDDC7E40A2B7DD1CA4CCCA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +102,7 @@
 				8FA8AEA023F13F2200BCED44 /* Foundation.framework */,
 				8FA8AE9E23F13F1B00BCED44 /* UIKit.framework */,
 				8FA8AE9A23F13F0B00BCED44 /* Common.framework */,
+				421E8BA4074E68F1311D6D1F /* Pods_Login.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FA8AE5923F130DE00BCED44 /* Build configuration list for PBXNativeTarget "Login" */;
 			buildPhases = (
+				BC325D2C497E9EB7869511AE /* [CP] Check Pods Manifest.lock */,
 				8FA8AE4C23F130DE00BCED44 /* Headers */,
 				8FA8AE4D23F130DE00BCED44 /* Sources */,
 				8FA8AE4E23F130DE00BCED44 /* Frameworks */,
@@ -164,6 +182,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BC325D2C497E9EB7869511AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Login-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8FA8AE4D23F130DE00BCED44 /* Sources */ = {
@@ -299,6 +342,7 @@
 		};
 		8FA8AE5A23F130DE00BCED44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E223CBB73F734C617469805C /* Pods-Login.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -323,6 +367,7 @@
 		};
 		8FA8AE5B23F130DE00BCED44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B0A766A7FE7609AF001DCFA /* Pods-Login.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

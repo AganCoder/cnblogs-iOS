@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59D7C63221337F405A56E23B /* Pods_CNBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */; };
 		8416AC65236DD7F9003BF380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416AC64236DD7F9003BF380 /* AppDelegate.swift */; };
 		8416AC6C236DD7F9003BF380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416AC6A236DD7F9003BF380 /* Main.storyboard */; };
 		8416AC6E236DD7FB003BF380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8416AC6D236DD7FB003BF380 /* Assets.xcassets */; };
@@ -26,10 +27,11 @@
 		8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3B23F12CD500BCED44 /* News.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; };
 		8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FA8AE5F23F1310500BCED44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE5E23F1310500BCED44 /* Login.framework */; };
-		8FA8AE6023F1310500BCED44 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE5E23F1310500BCED44 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; };
 		8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; };
+		8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +53,9 @@
 			files = (
 				8FA8AE3E23F12CD500BCED44 /* Blog.framework in Embed Frameworks */,
 				844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */,
-				8FA8AE6023F1310500BCED44 /* Login.framework in Embed Frameworks */,
 				8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */,
 				8FA8AE4023F12CD500BCED44 /* Compose.framework in Embed Frameworks */,
+				8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */,
 				8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */,
 				8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */,
 				8FA8AE4223F12CD500BCED44 /* Knowledge.framework in Embed Frameworks */,
@@ -64,6 +66,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CnBlogs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B26E5BE31FCA729799FD42 /* Pods-CnBlogs-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CnBlogs-iOS.debug.xcconfig"; path = "Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5380A6D5F8DAFDD5BE47919E /* Pods-CnBlogs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CnBlogs-iOS.release.xcconfig"; path = "Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		74A54A173E111982F4456C8A /* Pods-CNBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlog.debug.xcconfig"; path = "Target Support Files/Pods-CNBlog/Pods-CNBlog.debug.xcconfig"; sourceTree = "<group>"; };
 		8416AC61236DD7F9003BF380 /* CnBlogs-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CnBlogs-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416AC64236DD7F9003BF380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8416AC6B236DD7F9003BF380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 		8FA8AE3C23F12CD500BCED44 /* Problem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Problem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE5E23F1310500BCED44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE7C23F1371500BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEC905E23F1822A00D3C044 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlog.release.xcconfig"; path = "Target Support Files/Pods-CNBlog/Pods-CNBlog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +100,13 @@
 			files = (
 				8FA8AE3D23F12CD500BCED44 /* Blog.framework in Frameworks */,
 				844183C723707F6A006C344F /* CNBlog.framework in Frameworks */,
-				8FA8AE5F23F1310500BCED44 /* Login.framework in Frameworks */,
 				8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */,
 				8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */,
 				8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */,
 				8FA8AE4323F12CD500BCED44 /* News.framework in Frameworks */,
 				8FA8AE4123F12CD500BCED44 /* Knowledge.framework in Frameworks */,
+				8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */,
+				AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +114,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D7C63221337F405A56E23B /* Pods_CNBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23BF1CF2879BA4FC3A3F0AEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74A54A173E111982F4456C8A /* Pods-CNBlog.debug.xcconfig */,
+				E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */,
+				18B26E5BE31FCA729799FD42 /* Pods-CnBlogs-iOS.debug.xcconfig */,
+				5380A6D5F8DAFDD5BE47919E /* Pods-CnBlogs-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8416AC58236DD7F9003BF380 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +139,7 @@
 				844183C123707F6A006C344F /* CNBlog */,
 				8416AC62236DD7F9003BF380 /* Products */,
 				8FA8AE3723F12CD500BCED44 /* Frameworks */,
+				23BF1CF2879BA4FC3A3F0AEB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +178,7 @@
 		8FA8AE3723F12CD500BCED44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FEC905E23F1822A00D3C044 /* Login.framework */,
 				8FA8AE7C23F1371500BCED44 /* Common.framework */,
 				8FA8AE5E23F1310500BCED44 /* Login.framework */,
 				8FA8AE3823F12CD500BCED44 /* Blog.framework */,
@@ -162,6 +186,8 @@
 				8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */,
 				8FA8AE3B23F12CD500BCED44 /* News.framework */,
 				8FA8AE3C23F12CD500BCED44 /* Problem.framework */,
+				B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */,
+				08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,10 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8416AC75236DD7FB003BF380 /* Build configuration list for PBXNativeTarget "CnBlogs-iOS" */;
 			buildPhases = (
+				77370505799120DC93BE0AC1 /* [CP] Check Pods Manifest.lock */,
 				8416AC5D236DD7F9003BF380 /* Sources */,
 				8416AC5E236DD7F9003BF380 /* Frameworks */,
 				8416AC5F236DD7F9003BF380 /* Resources */,
 				844183CC23707F6A006C344F /* Embed Frameworks */,
+				5A995116B99D2BC442E6CE6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844183C923707F6A006C344F /* Build configuration list for PBXNativeTarget "CNBlog" */;
 			buildPhases = (
+				A04737423A5A208744B1912A /* [CP] Check Pods Manifest.lock */,
 				844183BB23707F6A006C344F /* Headers */,
 				844183BC23707F6A006C344F /* Sources */,
 				844183BD23707F6A006C344F /* Frameworks */,
@@ -273,6 +302,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A995116B99D2BC442E6CE6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77370505799120DC93BE0AC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CnBlogs-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A04737423A5A208744B1912A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CNBlog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8416AC5D236DD7F9003BF380 /* Sources */ = {
@@ -438,6 +531,7 @@
 		};
 		8416AC76236DD7FB003BF380 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B26E5BE31FCA729799FD42 /* Pods-CnBlogs-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +551,7 @@
 		};
 		8416AC77236DD7FB003BF380 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5380A6D5F8DAFDD5BE47919E /* Pods-CnBlogs-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +571,7 @@
 		};
 		844183CA23707F6A006C344F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A54A173E111982F4456C8A /* Pods-CNBlog.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -503,6 +599,7 @@
 		};
 		844183CB23707F6A006C344F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
