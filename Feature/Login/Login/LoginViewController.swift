@@ -8,6 +8,20 @@
 
 import UIKit
 import WebKit
+import Common
+
+
+class  LoginFeature: NSObject, Feature {
+            
+    static var dependenciesInitializer: AnyInitializer {
+        return AnyInitializer(Empty.init)
+    }
+    
+    static func build(dependencies: Empty) -> UIViewController {
+        return LoginViewController()
+    }
+}
+
 
 public class LoginViewController: UIViewController {
     
@@ -23,7 +37,7 @@ public class LoginViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         webView = WKWebView(frame: view.bounds)
         view.addSubview(webView!)
     }

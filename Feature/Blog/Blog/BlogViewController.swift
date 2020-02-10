@@ -7,6 +7,18 @@
 //
 
 import UIKit
+import Common
+
+enum BlogFeature: Feature {
+    
+    static var dependenciesInitializer: AnyInitializer {
+        return AnyInitializer(Common.Empty.init)
+    }
+                
+    static func build(dependencies: Common.Empty) -> UIViewController {
+        return BlogViewController()
+    }
+}
 
 public extension BlogViewController {
     static func make() -> BlogViewController {
@@ -19,6 +31,7 @@ public class BlogViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     

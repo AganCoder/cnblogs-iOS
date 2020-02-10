@@ -7,62 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FA8ADC623F12B0000BCED44 /* Blog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8ADC423F12B0000BCED44 /* Blog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FA8ADCD23F12B1000BCED44 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */; };
-		8FA8AE3623F12CC600BCED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3523F12CC600BCED44 /* UIKit.framework */; platformFilter = ios; };
+		8FA8AE5623F130DE00BCED44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8AE5423F130DE00BCED44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FA8AE5D23F130E400BCED44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE5C23F130E400BCED44 /* LoginViewController.swift */; };
+		8FA8AE9B23F13F0B00BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE9A23F13F0B00BCED44 /* Common.framework */; };
+		8FA8AE9C23F13F0B00BCED44 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE9A23F13F0B00BCED44 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FA8AE9F23F13F1B00BCED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE9E23F13F1B00BCED44 /* UIKit.framework */; platformFilter = ios; };
+		8FA8AEA123F13F2200BCED44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AEA023F13F2200BCED44 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8FA8AE9D23F13F0B00BCED44 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FA8AE9C23F13F0B00BCED44 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		8FA8ADC123F12B0000BCED44 /* Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FA8ADC423F12B0000BCED44 /* Blog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blog.h; sourceTree = "<group>"; };
-		8FA8ADC523F12B0000BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
-		8FA8AE3523F12CC600BCED44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8FA8AE5123F130DE00BCED44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FA8AE5423F130DE00BCED44 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		8FA8AE5523F130DE00BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FA8AE5C23F130E400BCED44 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8FA8AE9A23F13F0B00BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FA8AE9E23F13F1B00BCED44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8FA8AEA023F13F2200BCED44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8FA8ADBE23F12B0000BCED44 /* Frameworks */ = {
+		8FA8AE4E23F130DE00BCED44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8AE3623F12CC600BCED44 /* UIKit.framework in Frameworks */,
+				8FA8AE9B23F13F0B00BCED44 /* Common.framework in Frameworks */,
+				8FA8AEA123F13F2200BCED44 /* Foundation.framework in Frameworks */,
+				8FA8AE9F23F13F1B00BCED44 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8FA8ADB723F12B0000BCED44 = {
+		8FA8AE4723F130DE00BCED44 = {
 			isa = PBXGroup;
 			children = (
-				8FA8ADC323F12B0000BCED44 /* Blog */,
-				8FA8ADC223F12B0000BCED44 /* Products */,
-				8FA8AE3423F12CC600BCED44 /* Frameworks */,
+				8FA8AE5323F130DE00BCED44 /* Login */,
+				8FA8AE5223F130DE00BCED44 /* Products */,
+				8FA8AE9923F13F0B00BCED44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		8FA8ADC223F12B0000BCED44 /* Products */ = {
+		8FA8AE5223F130DE00BCED44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8FA8ADC123F12B0000BCED44 /* Blog.framework */,
+				8FA8AE5123F130DE00BCED44 /* Login.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8FA8ADC323F12B0000BCED44 /* Blog */ = {
+		8FA8AE5323F130DE00BCED44 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */,
-				8FA8ADC423F12B0000BCED44 /* Blog.h */,
-				8FA8ADC523F12B0000BCED44 /* Info.plist */,
+				8FA8AE5C23F130E400BCED44 /* LoginViewController.swift */,
+				8FA8AE5423F130DE00BCED44 /* Login.h */,
+				8FA8AE5523F130DE00BCED44 /* Info.plist */,
 			);
-			path = Blog;
+			path = Login;
 			sourceTree = "<group>";
 		};
-		8FA8AE3423F12CC600BCED44 /* Frameworks */ = {
+		8FA8AE9923F13F0B00BCED44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8FA8AE3523F12CC600BCED44 /* UIKit.framework */,
+				8FA8AEA023F13F2200BCED44 /* Foundation.framework */,
+				8FA8AE9E23F13F1B00BCED44 /* UIKit.framework */,
+				8FA8AE9A23F13F0B00BCED44 /* Common.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,50 +93,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8FA8ADBC23F12B0000BCED44 /* Headers */ = {
+		8FA8AE4C23F130DE00BCED44 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8ADC623F12B0000BCED44 /* Blog.h in Headers */,
+				8FA8AE5623F130DE00BCED44 /* Login.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8FA8ADC023F12B0000BCED44 /* Blog */ = {
+		8FA8AE5023F130DE00BCED44 /* Login */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FA8ADC923F12B0000BCED44 /* Build configuration list for PBXNativeTarget "Blog" */;
+			buildConfigurationList = 8FA8AE5923F130DE00BCED44 /* Build configuration list for PBXNativeTarget "Login" */;
 			buildPhases = (
-				8FA8ADBC23F12B0000BCED44 /* Headers */,
-				8FA8ADBD23F12B0000BCED44 /* Sources */,
-				8FA8ADBE23F12B0000BCED44 /* Frameworks */,
-				8FA8ADBF23F12B0000BCED44 /* Resources */,
+				8FA8AE4C23F130DE00BCED44 /* Headers */,
+				8FA8AE4D23F130DE00BCED44 /* Sources */,
+				8FA8AE4E23F130DE00BCED44 /* Frameworks */,
+				8FA8AE4F23F130DE00BCED44 /* Resources */,
+				8FA8AE9D23F13F0B00BCED44 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Blog;
-			productName = Blog;
-			productReference = 8FA8ADC123F12B0000BCED44 /* Blog.framework */;
+			name = Login;
+			productName = Login;
+			productReference = 8FA8AE5123F130DE00BCED44 /* Login.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8FA8ADB823F12B0000BCED44 /* Project object */ = {
+		8FA8AE4823F130DE00BCED44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Noah-Normal";
 				TargetAttributes = {
-					8FA8ADC023F12B0000BCED44 = {
+					8FA8AE5023F130DE00BCED44 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 8FA8ADBB23F12B0000BCED44 /* Build configuration list for PBXProject "Blog" */;
+			buildConfigurationList = 8FA8AE4B23F130DE00BCED44 /* Build configuration list for PBXProject "Login" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,18 +145,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 8FA8ADB723F12B0000BCED44;
-			productRefGroup = 8FA8ADC223F12B0000BCED44 /* Products */;
+			mainGroup = 8FA8AE4723F130DE00BCED44;
+			productRefGroup = 8FA8AE5223F130DE00BCED44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8FA8ADC023F12B0000BCED44 /* Blog */,
+				8FA8AE5023F130DE00BCED44 /* Login */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8FA8ADBF23F12B0000BCED44 /* Resources */ = {
+		8FA8AE4F23F130DE00BCED44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,18 +166,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8FA8ADBD23F12B0000BCED44 /* Sources */ = {
+		8FA8AE4D23F130DE00BCED44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8ADCD23F12B1000BCED44 /* BlogViewController.swift in Sources */,
+				8FA8AE5D23F130E400BCED44 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8FA8ADC723F12B0000BCED44 /* Debug */ = {
+		8FA8AE5723F130DE00BCED44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +240,7 @@
 			};
 			name = Debug;
 		};
-		8FA8ADC823F12B0000BCED44 /* Release */ = {
+		8FA8AE5823F130DE00BCED44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +297,7 @@
 			};
 			name = Release;
 		};
-		8FA8ADCA23F12B0000BCED44 /* Debug */ = {
+		8FA8AE5A23F130DE00BCED44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -281,14 +305,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Blog/Info.plist;
+				INFOPLIST_FILE = Login/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.Blog;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -296,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		8FA8ADCB23F12B0000BCED44 /* Release */ = {
+		8FA8AE5B23F130DE00BCED44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -304,14 +328,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Blog/Info.plist;
+				INFOPLIST_FILE = Login/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.Blog;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -322,25 +346,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8FA8ADBB23F12B0000BCED44 /* Build configuration list for PBXProject "Blog" */ = {
+		8FA8AE4B23F130DE00BCED44 /* Build configuration list for PBXProject "Login" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FA8ADC723F12B0000BCED44 /* Debug */,
-				8FA8ADC823F12B0000BCED44 /* Release */,
+				8FA8AE5723F130DE00BCED44 /* Debug */,
+				8FA8AE5823F130DE00BCED44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8FA8ADC923F12B0000BCED44 /* Build configuration list for PBXNativeTarget "Blog" */ = {
+		8FA8AE5923F130DE00BCED44 /* Build configuration list for PBXNativeTarget "Login" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FA8ADCA23F12B0000BCED44 /* Debug */,
-				8FA8ADCB23F12B0000BCED44 /* Release */,
+				8FA8AE5A23F130DE00BCED44 /* Debug */,
+				8FA8AE5B23F130DE00BCED44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8FA8ADB823F12B0000BCED44 /* Project object */;
+	rootObject = 8FA8AE4823F130DE00BCED44 /* Project object */;
 }

@@ -8,22 +8,25 @@
       location = "container:"
       name = "Feature">
       <FileRef
-         location = "group:Login/Login.xcodeproj">
+         location = "group:Feature/Problem/Problem.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Problem/Problem.xcodeproj">
+         location = "group:Feature/News/News.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Compose/Compose.xcodeproj">
+         location = "group:Feature/Login/Login.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:News/News.xcodeproj">
+         location = "group:Feature/Knowledge/Knowledge.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Knowledge/Knowledge.xcodeproj">
+         location = "group:Feature/Compose/Compose.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Blog/Blog.xcodeproj">
+         location = "group:Feature/Blog/Blog.xcodeproj">
       </FileRef>
    </Group>
+   <FileRef
+      location = "group:Tools/Common/Common.xcodeproj">
+   </FileRef>
 </Workspace>
