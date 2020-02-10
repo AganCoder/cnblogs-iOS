@@ -11,13 +11,13 @@ import WebKit
 import Common
 
 
-class  LoginFeature: NSObject, Feature {
+public class LoginFeature: Feature {
             
-    static var dependenciesInitializer: AnyInitializer {
+    public static var dependenciesInitializer: AnyInitializer {
         return AnyInitializer(Empty.init)
     }
     
-    static func build(dependencies: Empty) -> UIViewController {
+    public static func build(dependencies: Empty) -> UIViewController {
         return LoginViewController()
     }
 }

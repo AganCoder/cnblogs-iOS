@@ -11,6 +11,10 @@ import UIKit
 
 public protocol Dependency {}
 
+public struct Empty: Dependency {
+    public init() { }
+}
+
 public final class RouterService: Dependency {
 
     public static let shared = RouterService()
@@ -19,30 +23,28 @@ public final class RouterService: Dependency {
 
     public init() {
         register(dependency: self)
+        register(dependency: Empty())
     }
 
     public func register(dependency: Dependency) {
         store.register(dependency)
     }
     
-    func featureViewController<T: Feature>(forFeature: T.Type) -> UIViewController {
+    public func featureViewController<T: Feature>(forFeature: T.Type) -> UIViewController {
         let deps = T.dependenciesInitializer.build(store) as! T.Dependencies
         let viewController = T.build(dependencies: deps)
         return viewController
     }
     
-    func navigate<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
-        let viewController = featureViewController(forFeature: toFeature)
-        viewController.navigationController?.pushViewController(viewController, animated: true)
+    public func navigate<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
+        let vc = featureViewController(forFeature: toFeature)
+        viewController.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func present<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
-        let viewController = featureViewController(forFeature: toFeature)
-        viewController.present(viewController, animated: true, completion: nil)
+    public func present<T: Feature>(toFeature: T.Type, fromView viewController: UIViewController) {
+        let vc = featureViewController(forFeature: toFeature)
+        viewController.present(vc, animated: true, completion: nil)
     }
-    
-    
-    
 }
 
 public final class Store {

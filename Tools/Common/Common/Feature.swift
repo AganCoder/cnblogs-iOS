@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-public struct Empty {
-    public init() { }
-}
+
 
 public protocol Feature {
     

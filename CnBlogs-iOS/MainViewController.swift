@@ -9,6 +9,7 @@
 import UIKit
 import Blog
 import Login
+import Common
 
 extension UIStoryboard {
     static var main: UIStoryboard {
@@ -47,10 +48,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        
-        let webView = LoginViewController()
-        
-        self.navigationController?.pushViewController(webView, animated: true)
+                
+        RouterService.shared.navigate(toFeature: LoginFeature.self, fromView: self)
+
+
     }
     
     private func configPageViewController() {
