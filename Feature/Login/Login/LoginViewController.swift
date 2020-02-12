@@ -45,14 +45,20 @@ public class LoginViewController: UIViewController {
         view.addSubview(webView!)
         
         let injectRightItem = UIBarButtonItem(title: "注入", style: .done, target: self, action: #selector(injectUserInfo))
-        injectRightItem.isEnabled = false
+//        injectRightItem.isEnabled = false
         self.navigationItem.rightBarButtonItem = injectRightItem
         
         self.injectRightItem = injectRightItem
     }
     
     @objc func injectUserInfo() {
-        debugPrint(#function)
+        
+        let userName = "";
+        let password = ""
+        let jsCore = "document.getElementById('LoginName').value='\(userName)';document.getElementById('Password').value='\(password)';"
+        
+        // local function. don't care result
+        self.webView?.evaluateJavaScript(jsCore, completionHandler: nil)
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -88,7 +94,8 @@ extension LoginViewController: WKNavigationDelegate {
     //         1. 正常加载页面或者点击跳转页面
     //         2. 服务器端重定向页面也会进行询问
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        // debugPrint("decidePolicyFor navigationAction")
+        debugPrint(navigationAction.request.url?.absoluteString)
+        
         decisionHandler(.allow)
     }
     
