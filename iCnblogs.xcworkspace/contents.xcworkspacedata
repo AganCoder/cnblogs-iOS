@@ -26,9 +26,13 @@
          location = "group:Feature/Blog/Blog.xcodeproj">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:Tools/Common/Common.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Commons">
+      <FileRef
+         location = "group:Tools/Common/Common.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
