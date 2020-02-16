@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Foundation
 import WebKit
 import Common
-import Alamofire
+//import Alamofire
 
 
 private let redirectUrl = "https://oauth.cnblogs.com/auth/callback"
@@ -102,22 +103,38 @@ extension LoginViewController: WKNavigationDelegate {
             let urlComponent = URLComponents(string: urlString.replacingOccurrences(of: "#", with: "?")),
             let codeValue = urlComponent.queryItems?.first(where: { $0.name == "code"})?.value {
             
-            var parameter = Parameters()
+            var parameter: [String: String] = [:]
             parameter["client_id"] = "c5f19532-4f2e-4439-a927-566bf9baf131"
             parameter["client_secret"] = "Ka1IC6WD5K29nhz3DKu1H9-wYB1FKPMj7h9k7UAp6Qzvxk0dVoJe4g4lCf07FTjZRqj8eW6py2ApfDtS"
             parameter["grant_type"] = "authorization_code"
             parameter["code"] = codeValue
             parameter["redirect_uri"] = redirectUrl
-            
-            var header = HTTPHeaders()
-            header["Content-Type"] = "application/x-www-form-urlencoded"
                         
+            let configuration = URLSessionConfiguration.default
+            configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+            configuration.allowsCellularAccess = true
+            configuration.timeoutIntervalForRequest = 15
     
-            Alamofire.request("https://oauth.cnblogs.com/connect/token", method: .post, parameters: parameter, headers: header).responseJSON { (resp) in
-                debugPrint(resp)
-            }
-            
+            let session = URLSession(configuration: configuration)
                                             
+            
+            if let url = URL(string: "https://oauth.cnblogs.com/connect/token") /*, let data = try? PropertyListEncoder().encode(parameter) */ {
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = "POST"
+                urlRequest.addValue("Content-Type", forHTTPHeaderField: "application/x-www-form-urlencoded")
+                urlRequest.httpBody = try! PropertyListSerialization.data(fromPropertyList: parameter, format: .binary, options: 0)
+                
+                        
+                session.dataTask(with: urlRequest) { (data, resp, error) in
+                    if let data = data, let str = String(data: data, encoding: .utf8) {
+                        debugPrint(str)
+                    }
+                    
+                    debugPrint(resp)
+                    debugPrint(error)
+                }.resume()
+            }
+    
             return decisionHandler(.cancel)
         }
         
