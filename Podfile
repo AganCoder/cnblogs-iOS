@@ -21,7 +21,7 @@ end
 
 target 'CnBlogs-iOS' do
   workspace_pods
-
+  pod 'PKHUD', '~> 5.0'
   # Pods for CnBlogs-iOS
 
 end
@@ -36,6 +36,6 @@ end
 
 target 'Login' do
   project 'Feature/Login/Login.xcodeproj'
-
-  workspace_pods
+    
+  pod 'PKHUD', '~> 5.0'
 end

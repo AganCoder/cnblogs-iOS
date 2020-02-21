@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import WebKit
 import Common
+import PKHUD
 
 struct CnBlogs {
     static let redirectUrl = "https://oauth.cnblogs.com/auth/callback"
@@ -43,7 +44,7 @@ public class LoginViewController: UIViewController {
     }
     
     
-    private var session: URLSession!
+    
     
     private var injectRightItem: UIBarButtonItem?
         
@@ -92,6 +93,8 @@ public class LoginViewController: UIViewController {
         component?.queryItems = body.map { URLQueryItem(name:$0, value: $1)}
                 
         if let url = component?.url  {
+            HUD.show(.progress)
+            
             let request = URLRequest(url: url)
             webView?.load(request)
         }
@@ -108,7 +111,9 @@ extension LoginViewController: WKNavigationDelegate {
         if let urlString = navigationAction.request.url?.absoluteString, urlString.hasPrefix(CnBlogs.redirectUrl),
             let urlComponent = URLComponents(string: urlString.replacingOccurrences(of: "#", with: "?")),
             let codeValue = urlComponent.queryItems?.first(where: { $0.name == "code"})?.value {
-                       
+                      
+            HUD.show(.progress)
+            
             debugPrint(codeValue)
             
             var parameter: [String: String] = [:]
@@ -120,7 +125,7 @@ extension LoginViewController: WKNavigationDelegate {
                         
             let configuration = URLSessionConfiguration.default
             configuration.httpAdditionalHeaders = ["Content-Type": "application/x-www-form-urlencoded"]
-            session = URLSession(configuration: configuration)
+            var session = URLSession(configuration: configuration)
             
             session = URLSession.shared
                     
@@ -128,14 +133,25 @@ extension LoginViewController: WKNavigationDelegate {
             urlRequest.httpMethod = "POST"
             urlRequest.httpBody = parameter.map({"\($0)=\($1)"}).joined(separator: "&").data(using: .utf8)
 
-            session.dataTask(with: urlRequest) { (data, resp, error) in                
+            session.dataTask(with: urlRequest) { (data, resp, error) in
+                guard error == nil else {
+                    DispatchQueue.main.async {
+                        HUD.flash(.labeledError(title: error?.localizedDescription, subtitle: nil))
+                        HUD.hide(afterDelay: 0.25)
+                    }
+                    return
+                }
                 
+                debugPrint(Thread.current)
+                                              
                 if let data = data, let str = String(data: data, encoding: .utf8) {
                     debugPrint(str)
                 }
                 
-                debugPrint(resp)
-                
+                DispatchQueue.main.async {
+                    HUD.flash(.label("登录成功"))
+                    HUD.hide(afterDelay: 0.25)
+                }
             }.resume()
     
             return decisionHandler(.cancel)
@@ -151,14 +167,14 @@ extension LoginViewController: WKNavigationDelegate {
     //      1. 页面跳转，例如点击了网页的 href 跳另一个页面，不会调用该方法
     //      2. 重定向内容也不回调用该方法
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        // debugPrint(#function)
+         debugPrint(#function)
         // debugPrint("Called when web content begins to load in a web view.")
     }
     
     // Called when a web view receives a server redirect.
     // 服务器端重定向问题
     public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        // debugPrint(#function)
+         debugPrint(#function)
     }
     
     // 加载完成网络临时数据，渲染之前询问是否需要进行渲染，允许就会渲染
@@ -176,7 +192,8 @@ extension LoginViewController: WKNavigationDelegate {
     // Called when the navigation is complete
     // 完成本地内容的渲染
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // debugPrint("didFinish")
+                
+        HUD.hide()
     }
     
     // 加载临时数据失败的时候会进行调用

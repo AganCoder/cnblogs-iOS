@@ -19,6 +19,11 @@
 
 ## Login 组件
 
++ Login 采用 PKHUD 的加载组件
++ Login 使用 WKWebView 进行登录页面展示
++ Login 使用自动注入脚本注入账号密码
++ 
+
 
 
 
