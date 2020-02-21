@@ -11,7 +11,7 @@ import Foundation
 public extension RandomAccessCollection {
     
     // ToDo
-    public func element(at index: Int) -> Element? {
+    func element(at index: Int) -> Element? {
         return nil
     }
 }

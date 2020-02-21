@@ -10,10 +10,12 @@ import UIKit
 import Foundation
 import WebKit
 import Common
-//import Alamofire
 
-
-private let redirectUrl = "https://oauth.cnblogs.com/auth/callback"
+struct CnBlogs {
+    static let redirectUrl = "https://oauth.cnblogs.com/auth/callback"
+    static let clientId = "c5f19532-4f2e-4439-a927-566bf9baf131"
+    static let clientSecret = "Ka1IC6WD5K29nhz3DKu1H9-wYB1FKPMj7h9k7UAp6Qzvxk0dVoJe4g4lCf07FTjZRqj8eW6py2ApfDtS"
+}
 
 
 public class LoginFeature: Feature {
@@ -39,6 +41,9 @@ public class LoginViewController: UIViewController {
             webView.navigationDelegate = self
         }
     }
+    
+    
+    private var session: URLSession!
     
     private var injectRightItem: UIBarButtonItem?
         
@@ -74,11 +79,12 @@ public class LoginViewController: UIViewController {
     }
     
     private func loadLoginUrlRequest() {
+        
         var body: [String: String] = [:]
-        body["client_id"] = "c5f19532-4f2e-4439-a927-566bf9baf131"
+        body["client_id"] = CnBlogs.clientId
         body["scope"] = "openid profile CnBlogsApi offline_access"
         body["response_type"] = "code id_token"
-        body["redirect_uri"] = redirectUrl
+        body["redirect_uri"] = CnBlogs.redirectUrl
         body["state"] = "abc"
         body["nonce"] = "xyz"
             
@@ -99,47 +105,46 @@ extension LoginViewController: WKNavigationDelegate {
     //         2. 服务器端重定向页面也会进行询问
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        if let urlString = navigationAction.request.url?.absoluteString, urlString.hasPrefix(redirectUrl),
+        if let urlString = navigationAction.request.url?.absoluteString, urlString.hasPrefix(CnBlogs.redirectUrl),
             let urlComponent = URLComponents(string: urlString.replacingOccurrences(of: "#", with: "?")),
             let codeValue = urlComponent.queryItems?.first(where: { $0.name == "code"})?.value {
+                       
+            debugPrint(codeValue)
             
             var parameter: [String: String] = [:]
-            parameter["client_id"] = "c5f19532-4f2e-4439-a927-566bf9baf131"
-            parameter["client_secret"] = "Ka1IC6WD5K29nhz3DKu1H9-wYB1FKPMj7h9k7UAp6Qzvxk0dVoJe4g4lCf07FTjZRqj8eW6py2ApfDtS"
+            parameter["client_id"] = CnBlogs.clientId
+            parameter["client_secret"] = CnBlogs.clientSecret
             parameter["grant_type"] = "authorization_code"
             parameter["code"] = codeValue
-            parameter["redirect_uri"] = redirectUrl
+            parameter["redirect_uri"] = CnBlogs.redirectUrl
                         
             let configuration = URLSessionConfiguration.default
-            configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-            configuration.allowsCellularAccess = true
-            configuration.timeoutIntervalForRequest = 15
-    
-            let session = URLSession(configuration: configuration)
-                                            
+            configuration.httpAdditionalHeaders = ["Content-Type": "application/x-www-form-urlencoded"]
+            session = URLSession(configuration: configuration)
             
-            if let url = URL(string: "https://oauth.cnblogs.com/connect/token") /*, let data = try? PropertyListEncoder().encode(parameter) */ {
-                var urlRequest = URLRequest(url: url)
-                urlRequest.httpMethod = "POST"
-                urlRequest.addValue("Content-Type", forHTTPHeaderField: "application/x-www-form-urlencoded")
-                urlRequest.httpBody = try! PropertyListSerialization.data(fromPropertyList: parameter, format: .binary, options: 0)
-                
-                        
-                session.dataTask(with: urlRequest) { (data, resp, error) in
-                    if let data = data, let str = String(data: data, encoding: .utf8) {
-                        debugPrint(str)
-                    }
+            session = URLSession.shared
                     
-                    debugPrint(resp)
-                    debugPrint(error)
-                }.resume()
-            }
+            var urlRequest = URLRequest(url: URL(string: "https://oauth.cnblogs.com/connect/token")!)
+            urlRequest.httpMethod = "POST"
+            urlRequest.httpBody = parameter.map({"\($0)=\($1)"}).joined(separator: "&").data(using: .utf8)
+
+            session.dataTask(with: urlRequest) { (data, resp, error) in                
+                
+                if let data = data, let str = String(data: data, encoding: .utf8) {
+                    debugPrint(str)
+                }
+                
+                debugPrint(resp)
+                
+            }.resume()
     
             return decisionHandler(.cancel)
         }
         
         decisionHandler(.allow)
     }
+    
+
     
     //  Called when web content begins to load in a web view.
     //  当 Web 开始加载网络的数据，未渲染前的时候回调用，注意: 此方法目前测试只会调用一次，就是 load 内容的时候，回调用该方法
