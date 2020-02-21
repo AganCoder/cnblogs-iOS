@@ -77,6 +77,20 @@ public class LoginViewController: UIViewController {
         if self.isMovingToParent {
             loadLoginUrlRequest()
         }
+        
+        self.webView?.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+    }
+    
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if let keyPath = keyPath, keyPath == "estimatedProgress", let progress = change?[NSKeyValueChangeKey.kindKey] as? Double {
+            if (progress == 1.0) {
+                HUD.hide()
+            }
+            return
+        }
+        
+        return super.observeValue(forKeyPath: keyPath, of: object, change: change, context: nil)
     }
     
     private func loadLoginUrlRequest() {
@@ -115,7 +129,7 @@ extension LoginViewController: WKNavigationDelegate {
             HUD.show(.progress)
             
             debugPrint(codeValue)
-            
+                            
             var parameter: [String: String] = [:]
             parameter["client_id"] = CnBlogs.clientId
             parameter["client_secret"] = CnBlogs.clientSecret
@@ -134,6 +148,10 @@ extension LoginViewController: WKNavigationDelegate {
             urlRequest.httpBody = parameter.map({"\($0)=\($1)"}).joined(separator: "&").data(using: .utf8)
 
             session.dataTask(with: urlRequest) { (data, resp, error) in
+                
+                
+                debugPrint(Thread.current) // Not on main thread
+                
                 guard error == nil else {
                     DispatchQueue.main.async {
                         HUD.flash(.labeledError(title: error?.localizedDescription, subtitle: nil))
@@ -141,16 +159,14 @@ extension LoginViewController: WKNavigationDelegate {
                     }
                     return
                 }
-                
-                debugPrint(Thread.current)
-                                              
+                                                                              
                 if let data = data, let str = String(data: data, encoding: .utf8) {
                     debugPrint(str)
                 }
                 
                 DispatchQueue.main.async {
                     HUD.flash(.label("登录成功"))
-                    HUD.hide(afterDelay: 0.25)
+                    HUD.hide(afterDelay: 2.5)
                 }
             }.resume()
     
@@ -192,23 +208,24 @@ extension LoginViewController: WKNavigationDelegate {
     // Called when the navigation is complete
     // 完成本地内容的渲染
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-                
-        HUD.hide()
     }
     
     // 加载临时数据失败的时候会进行调用
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        HUD.hide()
         // debugPrint(#function)
     }
     
     // 渲染失败的时候会进行调用
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         // debugPrint(#function)
+        HUD.hide()
     }
 
     // Terminate 的时候回调用
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         // debugPrint(#function)
+        HUD.hide()
     }
     
 }
