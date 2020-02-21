@@ -18,7 +18,6 @@ struct CnBlogs {
     static let clientSecret = "Ka1IC6WD5K29nhz3DKu1H9-wYB1FKPMj7h9k7UAp6Qzvxk0dVoJe4g4lCf07FTjZRqj8eW6py2ApfDtS"
 }
 
-
 public class LoginFeature: Feature {
             
     public static var dependenciesInitializer: AnyInitializer {
@@ -30,7 +29,6 @@ public class LoginFeature: Feature {
     }
 }
 
-
 public class LoginViewController: UIViewController {
     
     private var webView: WKWebView? {
@@ -38,13 +36,9 @@ public class LoginViewController: UIViewController {
             guard let webView = webView else {
                 return
             }
-            webView.uiDelegate = self
             webView.navigationDelegate = self
         }
     }
-    
-    
-    
     
     private var injectRightItem: UIBarButtonItem?
         
@@ -117,19 +111,17 @@ public class LoginViewController: UIViewController {
 
 extension LoginViewController: WKNavigationDelegate {
     
-    // 是否允许加载一个页面，其中包含两种情况
-    //         1. 正常加载页面或者点击跳转页面
-    //         2. 服务器端重定向页面也会进行询问
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        if let urlString = navigationAction.request.url?.absoluteString, urlString.hasPrefix(CnBlogs.redirectUrl),
+        if let urlString = navigationAction.request.url?.absoluteString,
+            urlString.hasPrefix(CnBlogs.redirectUrl),
             let urlComponent = URLComponents(string: urlString.replacingOccurrences(of: "#", with: "?")),
             let codeValue = urlComponent.queryItems?.first(where: { $0.name == "code"})?.value {
-                      
-            HUD.show(.progress)
             
             debugPrint(codeValue)
-                            
+                        
+            HUD.show(.progress)
+                                                                
             var parameter: [String: String] = [:]
             parameter["client_id"] = CnBlogs.clientId
             parameter["client_secret"] = CnBlogs.clientSecret
@@ -149,8 +141,7 @@ extension LoginViewController: WKNavigationDelegate {
 
             session.dataTask(with: urlRequest) { (data, resp, error) in
                 
-                
-                debugPrint(Thread.current) // Not on main thread
+                debugPrint(Thread.current) // not on main thread
                 
                 guard error == nil else {
                     DispatchQueue.main.async {
@@ -164,10 +155,7 @@ extension LoginViewController: WKNavigationDelegate {
                     debugPrint(str)
                 }
                 
-                DispatchQueue.main.async {
-                    HUD.flash(.label("登录成功"))
-                    HUD.hide(afterDelay: 2.5)
-                }
+                DispatchQueue.main.async { HUD.flash(.label("登录成功")); HUD.hide(afterDelay: 2.5) }
             }.resume()
     
             return decisionHandler(.cancel)
@@ -176,152 +164,35 @@ extension LoginViewController: WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
-
-    
-    //  Called when web content begins to load in a web view.
-    //  当 Web 开始加载网络的数据，未渲染前的时候回调用，注意: 此方法目前测试只会调用一次，就是 load 内容的时候，回调用该方法
-    //      1. 页面跳转，例如点击了网页的 href 跳另一个页面，不会调用该方法
-    //      2. 重定向内容也不回调用该方法
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
          debugPrint(#function)
-        // debugPrint("Called when web content begins to load in a web view.")
     }
     
-    // Called when a web view receives a server redirect.
-    // 服务器端重定向问题
     public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
          debugPrint(#function)
     }
     
-    // 加载完成网络临时数据，渲染之前询问是否需要进行渲染，允许就会渲染
     public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        // debugPrint("decidePolicyFor navigationResponse")
         decisionHandler(.allow)
     }
     
-    // Called when the web view begins to receive web content.
-    // 开始把本地的临时数据载入到网页中
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        // debugPrint("didCommit")
+        debugPrint(#function)
     }
     
-    // Called when the navigation is complete
-    // 完成本地内容的渲染
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     }
     
-    // 加载临时数据失败的时候会进行调用
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         HUD.hide()
-        // debugPrint(#function)
     }
     
-    // 渲染失败的时候会进行调用
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        // debugPrint(#function)
         HUD.hide()
     }
 
-    // Terminate 的时候回调用
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        // debugPrint(#function)
         HUD.hide()
     }
     
 }
-
-extension LoginViewController: WKUIDelegate {
-    
-    /** @abstract Creates a new web view.
-     @param webView The web view invoking the delegate method.
-     @param configuration The configuration to use when creating the new web
-     view. This configuration is a copy of webView.configuration.
-     @param navigationAction The navigation action causing the new web view to
-     be created.
-     @param windowFeatures Window features requested by the webpage.
-     @result A new web view or nil.
-     @discussion The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
-    
-     If you do not implement this method, the web view will cancel the navigation.
-     */
-    
-    public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        debugPrint(#function)
-        return nil
-    }
-
-    
-    /** @abstract Notifies your app that the DOM window object's close() method completed successfully.
-      @param webView The web view invoking the delegate method.
-      @discussion Your app should remove the web view from the view hierarchy and update
-      the UI as needed, such as by closing the containing browser tab or window.
-      */
-    @available(iOS 9.0, *)
-    public func webViewDidClose(_ webView: WKWebView) {
-        debugPrint(#function)
-    }
-
-    
-    /** @abstract Displays a JavaScript alert panel.
-     @param webView The web view invoking the delegate method.
-     @param message The message to display.
-     @param frame Information about the frame whose JavaScript initiated this
-     call.
-     @param completionHandler The completion handler to call after the alert
-     panel has been dismissed.
-     @discussion For user security, your app should call attention to the fact
-     that a specific website controls the content in this panel. A simple forumla
-     for identifying the controlling website is frame.request.URL.host.
-     The panel should have a single OK button.
-    
-     If you do not implement this method, the web view will behave as if the user selected the OK button.
-     */
-    
-    public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        debugPrint(#function)
-    }
-
-    
-    /** @abstract Displays a JavaScript confirm panel.
-     @param webView The web view invoking the delegate method.
-     @param message The message to display.
-     @param frame Information about the frame whose JavaScript initiated this call.
-     @param completionHandler The completion handler to call after the confirm
-     panel has been dismissed. Pass YES if the user chose OK, NO if the user
-     chose Cancel.
-     @discussion For user security, your app should call attention to the fact
-     that a specific website controls the content in this panel. A simple forumla
-     for identifying the controlling website is frame.request.URL.host.
-     The panel should have two buttons, such as OK and Cancel.
-    
-     If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     */
-    
-    public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        debugPrint(#function)
-    }
-
-    
-    /** @abstract Displays a JavaScript text input panel.
-     @param webView The web view invoking the delegate method.
-     @param prompt The prompt to display.
-     @param defaultText The initial text to display in the text entry field.
-     @param frame Information about the frame whose JavaScript initiated this call.
-     @param completionHandler The completion handler to call after the text
-     input panel has been dismissed. Pass the entered text if the user chose
-     OK, otherwise nil.
-     @discussion For user security, your app should call attention to the fact
-     that a specific website controls the content in this panel. A simple forumla
-     for identifying the controlling website is frame.request.URL.host.
-     The panel should have two buttons, such as OK and Cancel, and a field in
-     which to enter text.
-    
-     If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     */
-    
-    public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        debugPrint(#function)
-    }
-
-}
- 
