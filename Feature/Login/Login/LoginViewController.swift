@@ -29,14 +29,14 @@ public class LoginFeature: Feature {
     }
 }
 
-public class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController, WKScriptMessageHandler {
     
     private var webView: WKWebView? {
         didSet {
             guard let webView = webView else {
                 return
             }
-            webView.navigationDelegate = self
+            webView.navigationDelegate = self            
         }
     }
     
@@ -47,8 +47,15 @@ public class LoginViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "登录"
         navigationController?.navigationBar.isTranslucent = false
-                
+                        
+        let userContentController = WKUserContentController()
+        userContentController.add(self, name: "login")
+        
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = userContentController
+                        
         webView = WKWebView(frame: view.bounds)
         view.addSubview(webView!)
         
@@ -62,9 +69,7 @@ public class LoginViewController: UIViewController {
         progressView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         progressView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         progressView.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
-            
-           
-                        
+                                       
         let injectRightItem = UIBarButtonItem(title: "注入", style: .done, target: self, action: #selector(injectUserInfo))
         injectRightItem.isEnabled = false
         navigationItem.rightBarButtonItem = injectRightItem
@@ -110,7 +115,7 @@ public class LoginViewController: UIViewController {
     }
     
     deinit {
-        self.webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))        
+        self.webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }
     
     private func loadLoginUrlRequest() {
@@ -131,12 +136,17 @@ public class LoginViewController: UIViewController {
             webView?.load(request)
         }
     }
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+    }
+    
 }
 
 extension LoginViewController: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
+        debugPrint(#function)
         if let urlString = navigationAction.request.url?.absoluteString,
             urlString.hasPrefix(CnBlogs.redirectUrl),
             let urlComponent = URLComponents(string: urlString.replacingOccurrences(of: "#", with: "?")),
@@ -155,28 +165,40 @@ extension LoginViewController: WKNavigationDelegate {
                         
             let configuration = URLSessionConfiguration.default
             configuration.httpAdditionalHeaders = ["Content-Type": "application/x-www-form-urlencoded"]
-            var session = URLSession(configuration: configuration)
-            
-            session = URLSession.shared
-                    
+                                                
             var urlRequest = URLRequest(url: URL(string: "https://oauth.cnblogs.com/connect/token")!)
             urlRequest.httpMethod = "POST"
             urlRequest.httpBody = parameter.map({"\($0)=\($1)"}).joined(separator: "&").data(using: .utf8)
-
+            
+            let session = URLSession(configuration: configuration)
+            
             session.dataTask(with: urlRequest) { (data, resp, error) in
-                
                 debugPrint(Thread.current) // not on main thread
                 
-                guard error == nil else {
+                guard error == nil, let data = data else {
                     DispatchQueue.main.async {
                         HUD.flash(.labeledError(title: error?.localizedDescription, subtitle: nil))
                         HUD.hide(afterDelay: 0.25)
                     }
                     return
                 }
-                                                                              
-                if let data = data, let str = String(data: data, encoding: .utf8) {
-                    debugPrint(str)
+                                                                                              
+                let  decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .custom({ (jsonDecoder) -> Date in
+                    let container = try? jsonDecoder.singleValueContainer()
+                    
+                    if let expiredIn = try? container?.decode(Int.self) {
+                        return Date(timeIntervalSinceNow: TimeInterval(expiredIn))
+                    }
+                    return Date()
+                })
+                                
+                if case let .success(token) = Result(catching: { try decoder.decode(Token.self, from: data) }) {
+                    debugPrint("acessToken: \(token.accessToken)")
+                    DispatchQueue.main.async { User.token = token }
+                } else {
+                   fatalError() // Should not be here
                 }
                 
                 DispatchQueue.main.async { HUD.flash(.label("登录成功")); HUD.hide(afterDelay: 2.5) }
@@ -218,5 +240,4 @@ extension LoginViewController: WKNavigationDelegate {
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         
     }
-    
 }

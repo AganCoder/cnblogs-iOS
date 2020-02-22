@@ -23,6 +23,10 @@
 + Login 使用 WKWebView 进行登录页面展示
 + Login 使用自动注入脚本注入账号密码
 
+### 相关的issue
+
+https://stackoverflow.com/questions/58321114/why-i-get-the-console-warning-process-kill-returned-unexpected-error-1-when
+
 
 
 
