@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; };
 		8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FB3413E23F97AA4008AECA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FB3413D23F97AA4008AECA8 /* README.md */; };
 		8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; };
 		8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */; };
@@ -88,6 +89,8 @@
 		8FA8AE3C23F12CD500BCED44 /* Problem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Problem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE5E23F1310500BCED44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE7C23F1371500BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB3413D23F97AA4008AECA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8FDC05C5240018FA009EEF58 /* CnBlogs-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CnBlogs-iOS.entitlements"; sourceTree = "<group>"; };
 		8FEC905E23F1822A00D3C044 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlog.release.xcconfig"; path = "Target Support Files/Pods-CNBlog/Pods-CNBlog.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		8416AC58236DD7F9003BF380 = {
 			isa = PBXGroup;
 			children = (
+				8FB3413D23F97AA4008AECA8 /* README.md */,
 				8416AC63236DD7F9003BF380 /* CnBlogs-iOS */,
 				844183C123707F6A006C344F /* CNBlog */,
 				8416AC62236DD7F9003BF380 /* Products */,
@@ -155,6 +159,7 @@
 		8416AC63236DD7F9003BF380 /* CnBlogs-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8FDC05C5240018FA009EEF58 /* CnBlogs-iOS.entitlements */,
 				8416AC64236DD7F9003BF380 /* AppDelegate.swift */,
 				8416AC6A236DD7F9003BF380 /* Main.storyboard */,
 				844183CD23707FFF006C344F /* SideViewController.swift */,
@@ -290,6 +295,7 @@
 			files = (
 				8416AC71236DD7FB003BF380 /* LaunchScreen.storyboard in Resources */,
 				8416AC6E236DD7FB003BF380 /* Assets.xcassets in Resources */,
+				8FB3413E23F97AA4008AECA8 /* README.md in Resources */,
 				8416AC6C236DD7F9003BF380 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,18 +540,20 @@
 			baseConfigurationReference = 18B26E5BE31FCA729799FD42 /* Pods-CnBlogs-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CnBlogs-iOS/CnBlogs-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85V32XYZPL;
+				DEVELOPMENT_TEAM = 28S852KBS5;
 				INFOPLIST_FILE = "CnBlogs-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.rsenjoyer.CnBlogs-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.CnBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -554,18 +562,20 @@
 			baseConfigurationReference = 5380A6D5F8DAFDD5BE47919E /* Pods-CnBlogs-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CnBlogs-iOS/CnBlogs-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85V32XYZPL;
+				DEVELOPMENT_TEAM = 28S852KBS5;
 				INFOPLIST_FILE = "CnBlogs-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.rsenjoyer.CnBlogs-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.CnBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

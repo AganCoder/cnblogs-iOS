@@ -8,6 +8,14 @@
 
 import Foundation
 
+public extension RandomAccessCollection {
+    
+    // ToDo
+    func element(at index: Int) -> Element? {
+        return nil
+    }
+}
+
 extension Array {
     
     fileprivate var range: Range<Int> {
