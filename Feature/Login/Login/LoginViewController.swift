@@ -40,17 +40,34 @@ public class LoginViewController: UIViewController {
         }
     }
     
+    private var progressView: UIProgressView!
+    
     private var injectRightItem: UIBarButtonItem?
         
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isTranslucent = false
                 
         webView = WKWebView(frame: view.bounds)
         view.addSubview(webView!)
         
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.progressTintColor = .blue
+        progressView.trackTintColor = .lightGray
+        view.addSubview(progressView)
+        
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        progressView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        progressView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        progressView.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+            
+           
+                        
         let injectRightItem = UIBarButtonItem(title: "注入", style: .done, target: self, action: #selector(injectUserInfo))
         injectRightItem.isEnabled = false
-        self.navigationItem.rightBarButtonItem = injectRightItem
+        navigationItem.rightBarButtonItem = injectRightItem
         
         self.injectRightItem = injectRightItem
     }
@@ -62,29 +79,38 @@ public class LoginViewController: UIViewController {
         let jsCore = "document.getElementById('LoginName').value='\(userName)';document.getElementById('Password').value='\(password)';"
         
         // local function. don't care result
-        self.webView?.evaluateJavaScript(jsCore, completionHandler: nil)
+        webView?.evaluateJavaScript(jsCore, completionHandler: nil)
     }
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if self.isMovingToParent {
+        if isMovingToParent {
             loadLoginUrlRequest()
         }
         
-        self.webView?.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        if let keyPath = keyPath, keyPath == "estimatedProgress", let progress = change?[NSKeyValueChangeKey.kindKey] as? Double {
+        if let keyPath = keyPath, keyPath == #keyPath(WKWebView.estimatedProgress), let progress = change?[NSKeyValueChangeKey.kindKey] as? Double {
+            progressView.progress = Float(progress)
+                        
             if (progress == 1.0) {
-                HUD.hide()
+                progressView.isHidden = true
+                
+                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut, animations: {
+                    self.progressView.alpha = 0.0
+                }, completion: nil)
             }
             return
         }
-        
         return super.observeValue(forKeyPath: keyPath, of: object, change: change, context: nil)
+    }
+    
+    deinit {
+        self.webView?.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))        
     }
     
     private func loadLoginUrlRequest() {
@@ -101,8 +127,6 @@ public class LoginViewController: UIViewController {
         component?.queryItems = body.map { URLQueryItem(name:$0, value: $1)}
                 
         if let url = component?.url  {
-            HUD.show(.progress)
-            
             let request = URLRequest(url: url)
             webView?.load(request)
         }
@@ -184,15 +208,15 @@ extension LoginViewController: WKNavigationDelegate {
     }
     
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        HUD.hide()
+
     }
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        HUD.hide()
+        
     }
 
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        HUD.hide()
+        
     }
     
 }

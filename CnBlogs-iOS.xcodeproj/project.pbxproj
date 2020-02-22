@@ -542,14 +542,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CnBlogs-iOS/CnBlogs-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85V32XYZPL;
+				DEVELOPMENT_TEAM = 28S852KBS5;
 				INFOPLIST_FILE = "CnBlogs-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.rsenjoyer.CnBlogs-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.CnBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -564,14 +564,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CnBlogs-iOS/CnBlogs-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85V32XYZPL;
+				DEVELOPMENT_TEAM = 28S852KBS5;
 				INFOPLIST_FILE = "CnBlogs-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.rsenjoyer.CnBlogs-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.rsenjoyer.CnBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
