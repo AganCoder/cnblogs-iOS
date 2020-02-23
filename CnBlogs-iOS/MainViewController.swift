@@ -18,6 +18,56 @@ extension UIStoryboard {
     }
 }
 
+public enum ModuleComponent: CaseIterable {
+    
+    case login
+    case blog
+    case news
+    case knowledge
+    case compose
+    case problem
+    
+    var title: String {
+        switch self {
+        case .blog:
+            return "博客"
+        case .news:
+            return "新闻"
+        case .knowledge:
+            return "知识库"
+        case .compose:
+            return "闪存"
+        case .problem:
+            return "博问"
+        case .login:
+            return "登录"
+        }
+    }
+    
+//    var feature: Feature {
+//        return LoginFeature.self
+//    }
+    
+//    var associatedViewController: UIViewController {
+//
+//    }
+    
+//    var feature: Feature.Type {
+//        return LoginFeature.self
+        
+//        switch self {
+//        case .blog:
+//            return
+//        default:
+//            <#code#>
+//        }
+//    }
+    
+}
+
+
+
+
 class MainViewController: UIViewController {
     
     var pageViewController: UIPageViewController! {
@@ -49,7 +99,6 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-                
         RouterService.shared.navigate(toFeature: LoginFeature.self, fromView: self)
     }
     
