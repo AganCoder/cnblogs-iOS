@@ -23,7 +23,7 @@
          location = "group:Feature/Compose/Compose.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Feature/Blog/Blog.xcodeproj">
+         location = "group:/Users/noah-normal/Github/cnblogs-iOS/Feature/Blog/Home.xcodeproj">
       </FileRef>
    </Group>
    <Group

@@ -28,22 +28,18 @@ public extension BlogViewController {
 
 public class BlogViewController: UIViewController {
 
+    var homeBlogViewController: CBBlogViewController?
+    
+    var recommendBlogViewController: RecommendViewController?
+            
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .blue
         
-        // Do any additional setup after loading the view.
+        title = "博客"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }

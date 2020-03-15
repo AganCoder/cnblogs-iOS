@@ -1,0 +1,16 @@
+//
+//  HomeViewController.swift
+//  Blog
+//
+//  Created by Noah-Normal on 2020/3/7.
+//  Copyright © 2020 Noah-Normal. All rights reserved.
+//
+
+import UIKit
+
+class HomeViewController: CBBlogViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
