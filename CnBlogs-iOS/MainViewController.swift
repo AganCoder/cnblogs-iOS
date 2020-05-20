@@ -114,7 +114,7 @@ class MainViewController: UIPageViewController {
     
     private func configPageViewController() {
         
-        let blog = UINavigationController(rootViewController: BlogViewController())
+        let blog = UINavigationController(rootViewController: HomeViewController())
         let blog1 = UINavigationController(rootViewController: UIViewController())
         
         controllers = [blog, blog1]

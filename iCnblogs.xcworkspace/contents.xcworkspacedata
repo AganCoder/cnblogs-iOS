@@ -11,9 +11,6 @@
          location = "group:Feature/Problem/Problem.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Feature/News/News.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:Feature/Login/Login.xcodeproj">
       </FileRef>
       <FileRef

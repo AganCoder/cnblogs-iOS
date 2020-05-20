@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F19BE62241E0667002C8F43 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19BE61241E0667002C8F43 /* BlogViewController.swift */; };
+		8F19BE64241E07F5002C8F43 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19BE63241E07F5002C8F43 /* NewsViewController.swift */; };
+		8F19BE66241E081E002C8F43 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19BE65241E081E002C8F43 /* LibraryViewController.swift */; };
 		8FA8ADC623F12B0000BCED44 /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8ADC423F12B0000BCED44 /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FA8ADCD23F12B1000BCED44 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */; };
+		8FA8ADCD23F12B1000BCED44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8ADCC23F12B1000BCED44 /* HomeViewController.swift */; };
 		8FA8AE3623F12CC600BCED44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3523F12CC600BCED44 /* UIKit.framework */; platformFilter = ios; };
 		8FA8AE8223F137E400BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE8123F137E400BCED44 /* Common.framework */; };
 		8FA8AE8323F137E400BCED44 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE8123F137E400BCED44 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FD47DD3241366F600F2D87E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DD2241366F600F2D87E /* HomeViewController.swift */; };
-		8FD47DD52413672600F2D87E /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DD42413672600F2D87E /* RecommendViewController.swift */; };
 		8FD47DD7241367B900F2D87E /* CBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DD6241367B900F2D87E /* CBBlogViewController.swift */; };
-		8FD47DD92413B5A300F2D87E /* AnyBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DD82413B5A300F2D87E /* AnyBlogController.swift */; };
+		8FD47DD92413B5A300F2D87E /* AnyHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DD82413B5A300F2D87E /* AnyHomeController.swift */; };
 		8FD47DDB2413B64F00F2D87E /* CBBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD47DDA2413B64F00F2D87E /* CBBlogController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,16 +36,17 @@
 
 /* Begin PBXFileReference section */
 		8F19BE28241DE76D002C8F43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8F19BE61241E0667002C8F43 /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		8F19BE63241E07F5002C8F43 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		8F19BE65241E081E002C8F43 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		8FA8ADC123F12B0000BCED44 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8ADC423F12B0000BCED44 /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		8FA8ADC523F12B0000BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		8FA8ADCC23F12B1000BCED44 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FA8AE3523F12CC600BCED44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8FA8AE8123F137E400BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FD47DD2241366F600F2D87E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		8FD47DD42413672600F2D87E /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		8FD47DD6241367B900F2D87E /* CBBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogViewController.swift; sourceTree = "<group>"; };
-		8FD47DD82413B5A300F2D87E /* AnyBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBlogController.swift; sourceTree = "<group>"; };
+		8FD47DD82413B5A300F2D87E /* AnyHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHomeController.swift; sourceTree = "<group>"; };
 		8FD47DDA2413B64F00F2D87E /* CBBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,11 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				8F19BE28241DE76D002C8F43 /* README.md */,
-				8FA8ADCC23F12B1000BCED44 /* BlogViewController.swift */,
-				8FD47DD2241366F600F2D87E /* HomeViewController.swift */,
-				8FD47DD42413672600F2D87E /* RecommendViewController.swift */,
+				8FA8ADCC23F12B1000BCED44 /* HomeViewController.swift */,
+				8F19BE61241E0667002C8F43 /* BlogViewController.swift */,
+				8F19BE63241E07F5002C8F43 /* NewsViewController.swift */,
+				8F19BE65241E081E002C8F43 /* LibraryViewController.swift */,
 				8FD47DD6241367B900F2D87E /* CBBlogViewController.swift */,
-				8FD47DD82413B5A300F2D87E /* AnyBlogController.swift */,
+				8FD47DD82413B5A300F2D87E /* AnyHomeController.swift */,
 				8FD47DDA2413B64F00F2D87E /* CBBlogController.swift */,
 				8FA8ADC423F12B0000BCED44 /* Home.h */,
 				8FA8ADC523F12B0000BCED44 /* Info.plist */,
@@ -183,12 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8ADCD23F12B1000BCED44 /* BlogViewController.swift in Sources */,
+				8FA8ADCD23F12B1000BCED44 /* HomeViewController.swift in Sources */,
 				8FD47DD7241367B900F2D87E /* CBBlogViewController.swift in Sources */,
-				8FD47DD3241366F600F2D87E /* HomeViewController.swift in Sources */,
-				8FD47DD92413B5A300F2D87E /* AnyBlogController.swift in Sources */,
+				8F19BE62241E0667002C8F43 /* BlogViewController.swift in Sources */,
+				8FD47DD92413B5A300F2D87E /* AnyHomeController.swift in Sources */,
+				8F19BE66241E081E002C8F43 /* LibraryViewController.swift in Sources */,
+				8F19BE64241E07F5002C8F43 /* NewsViewController.swift in Sources */,
 				8FD47DDB2413B64F00F2D87E /* CBBlogController.swift in Sources */,
-				8FD47DD52413672600F2D87E /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

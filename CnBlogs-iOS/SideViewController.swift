@@ -7,6 +7,22 @@
 //
 
 import UIKit
+import Login
+import Common
+
+
+protocol SideViewControllerDelegate: NSObjectProtocol {
+    func sideViewController(vc: SideViewController, didSelectedItem item: ModuleComponent)
+}
+
+public enum CellComponent: String {
+    case logged
+    case unlogged
+    case home
+    case knowledge
+    case problem
+    case setting
+}
 
 extension SideViewController {
     static func make() -> SideViewController {
@@ -15,7 +31,11 @@ extension SideViewController {
 }
 
 class SideViewController: UIViewController {
-
+    
+    var dataSoruce: [CellComponent] {
+        return [.logged, .unlogged, .home, .knowledge, .problem, .setting]
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             self.tableView.delegate = self
@@ -25,31 +45,30 @@ class SideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
+        }
 }
 
 extension SideViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.dataSoruce.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = indexPath.row == 0 ? "NickNameCell" : "TitleCell"
+        let cellIdentifier = indexPath.row == 0 ? "Cell" : "Cell"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.textLabel?.text = "Login"
         
-        return cell
+        return cell 
     }
         
 }
 
 extension SideViewController: UITableViewDelegate {
-    
+        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint("\(indexPath)")
-            
+        RouterService.shared.navigate(toFeature: LoginFeature.self, fromView: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

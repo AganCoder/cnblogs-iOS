@@ -8,91 +8,71 @@
 
 import UIKit
 
-public enum BlogType {
-    case home
-    case recommend
+public enum HomeType: String, CaseIterable {
+    case blog
+    case news
+    case library
 }
 
-extension BlogType {
-    
-    public var identifier: String {
-        switch self {
-        case .home:
-            return "Home"
-        case .recommend:
-            return "Recommend"
-        }
-    }
-    
-    public init?(identifier: String?) {
-        guard let identifier = identifier else {return nil }
-        
-        switch identifier {
-        case BlogType.home.identifier:
-            self = .home
-        case BlogType.recommend.identifier:
-            self = .recommend
-        default:
-            return nil
-        }
-    }
-}
-
-extension BlogType: Hashable, Equatable {
+extension HomeType: Hashable, Equatable {
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
+        hasher.combine(self.rawValue)
     }
 }
 
-public func == (lhs: BlogType, rhs: BlogType) -> Bool {
-    switch (lhs, rhs) {
-    case (.home, .home):
-        return true
-    case (.recommend, .recommend):
-        return true
-    default:
-        return false
-    }
-}
-
-
-class CBBlogController: NSObject {
+@available(iOS 13, *)
+extension HomeType: Identifiable {
     
-    fileprivate var blogs: [BlogType: AnyBlogController] = [:]
-    
-    subscript(type: BlogType) -> AnyBlogController? {
-        
-        let blogController: AnyBlogController?
-        
-        repeat {
-            if blogs.keys.contains(type) {
-                break;
-            }
-            
-            let controller: AnyBlogController
-            
-            switch type {
-            case .home:
-                controller = HomeBlogController()
-            case .recommend:
-                controller = RecommendBlogController()
-            }
-            blogs[type] = controller
-            
-        } while(false)
-        
-        blogController = blogs[type]
-                
-        return blogController
+    public var id: String {
+        return self.rawValue
     }
 }
 
-extension CBBlogController {
+
+
+class CBHomeController: NSObject {
     
-    public func blogOfIdentifier(_ identifier: String?) -> AnyBlogController? {
-        guard let blogType = BlogType(identifier: identifier) else { return nil }
-        
-        return self[blogType]
-    }
+    fileprivate var blogs: [HomeType: AnyHomeController] = [:]
+    
+//    subscript(type: HomeType) -> AnyHomeController {
+//
+//
+//    }
+//
+//    subscript(type: HomeType) -> AnyHomeController? {
+//
+//        let blogController: AnyHomeController?
+//
+//        repeat {
+//            if blogs.keys.contains(type) {
+//                break;
+//            }
+//
+//            let controller: AnyHomeController
+//
+//            switch type {
+//            case .home:
+//                controller = HomeBlogController()
+//            case .recommend:
+//                controller = RecommendBlogController()
+//            }
+//            blogs[type] = controller
+//
+//        } while(false)
+//
+//        blogController = blogs[type]
+//
+//        return blogController
+//    }
 }
+
+//
+//extension CBBlogController {
+//
+//    public func blogOfIdentifier(_ identifier: String?) -> AnyHomeController? {
+//        guard let blogType = HomeType(identifier: identifier) else { return nil }
+//
+//        return self[blogType]
+//    }
+//}

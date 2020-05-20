@@ -11,6 +11,7 @@ import Foundation
 import WebKit
 import Common
 import PKHUD
+//import PromiseKit
 
 struct CnBlogs {
     static let redirectUrl = "https://oauth.cnblogs.com/auth/callback"
@@ -193,9 +194,9 @@ extension LoginViewController: WKNavigationDelegate {
                     }
                     return Date()
                 })
-                                
+                                            
                 if case let .success(token) = Result(catching: { try decoder.decode(Token.self, from: data) }) {
-                    debugPrint("acessToken: \(token.accessToken)")
+                    debugPrint("acessToken: \(token.accessToken!)")
                     DispatchQueue.main.async { User.token = token }
                 } else {
                    fatalError() // Should not be here

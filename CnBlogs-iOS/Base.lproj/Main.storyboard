@@ -72,6 +72,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OMS-uz-WND">
+                                        <rect key="frame" x="0.0" y="152" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OMS-uz-WND" id="g4H-vU-mZf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -83,10 +91,13 @@
                             <constraint firstItem="Rdb-XJ-7wh" firstAttribute="leading" secondItem="TL1-Xy-GM0" secondAttribute="leading" id="wv3-Ee-GcT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Rdb-XJ-7wh" id="MFQ-fO-qQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="As7-Wz-Edh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1575" y="219"/>
+            <point key="canvasLocation" x="-893" y="-439"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="A6Z-ZK-i0L">

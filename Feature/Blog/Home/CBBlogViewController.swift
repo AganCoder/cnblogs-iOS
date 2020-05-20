@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBBlogViewController: UIViewController {
+class CBBlogViewController:  UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
