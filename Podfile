@@ -24,6 +24,7 @@ target 'CnBlogs-iOS' do
   workspace_pods
   pod 'PKHUD', '~> 5.0'
   pod "PromiseKit"
+  pod 'Hero'
   # Pods for CnBlogs-iOS
 
 end

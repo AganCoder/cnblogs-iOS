@@ -23,8 +23,6 @@
 		8FA8AE4023F12CD500BCED44 /* Compose.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3923F12CD500BCED44 /* Compose.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE4123F12CD500BCED44 /* Knowledge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */; };
 		8FA8AE4223F12CD500BCED44 /* Knowledge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FA8AE4323F12CD500BCED44 /* News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3B23F12CD500BCED44 /* News.framework */; };
-		8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3B23F12CD500BCED44 /* News.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; };
 		8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; };
@@ -58,7 +56,6 @@
 				8F19BE60241E03F8002C8F43 /* Home.framework in Embed Frameworks */,
 				8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */,
 				8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */,
-				8FA8AE4423F12CD500BCED44 /* News.framework in Embed Frameworks */,
 				8FA8AE4223F12CD500BCED44 /* Knowledge.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -106,7 +103,6 @@
 				8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */,
 				8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */,
 				8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */,
-				8FA8AE4323F12CD500BCED44 /* News.framework in Frameworks */,
 				8FA8AE4123F12CD500BCED44 /* Knowledge.framework in Frameworks */,
 				8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */,
 				AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */,
@@ -473,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -527,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

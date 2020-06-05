@@ -72,7 +72,7 @@ public class LoginViewController: UIViewController, WKScriptMessageHandler {
         progressView.heightAnchor.constraint(equalToConstant: 2.0).isActive = true
                                        
         let injectRightItem = UIBarButtonItem(title: "注入", style: .done, target: self, action: #selector(injectUserInfo))
-        injectRightItem.isEnabled = false
+        injectRightItem.isEnabled = true
         navigationItem.rightBarButtonItem = injectRightItem
         
         self.injectRightItem = injectRightItem
@@ -80,7 +80,7 @@ public class LoginViewController: UIViewController, WKScriptMessageHandler {
     
     @objc func injectUserInfo() {
         
-        let userName = "";
+        let userName = "gaox_219";
         let password = ""
         let jsCore = "document.getElementById('LoginName').value='\(userName)';document.getElementById('Password').value='\(password)';"
         
@@ -141,7 +141,6 @@ public class LoginViewController: UIViewController, WKScriptMessageHandler {
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
     }
-    
 }
 
 extension LoginViewController: WKNavigationDelegate {
@@ -174,8 +173,9 @@ extension LoginViewController: WKNavigationDelegate {
             let session = URLSession(configuration: configuration)
             
             session.dataTask(with: urlRequest) { (data, resp, error) in
+
                 debugPrint(Thread.current) // not on main thread
-                
+
                 guard error == nil, let data = data else {
                     DispatchQueue.main.async {
                         HUD.flash(.labeledError(title: error?.localizedDescription, subtitle: nil))
@@ -196,7 +196,7 @@ extension LoginViewController: WKNavigationDelegate {
                 })
                                             
                 if case let .success(token) = Result(catching: { try decoder.decode(Token.self, from: data) }) {
-                    debugPrint("acessToken: \(token.accessToken!)")
+                    debugPrint("acessToken: \(token)")
                     DispatchQueue.main.async { User.token = token }
                 } else {
                    fatalError() // Should not be here

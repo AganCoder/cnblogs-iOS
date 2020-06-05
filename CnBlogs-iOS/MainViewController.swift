@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Login
 import Common
 import Compose
 import Home
+import Login
 
 extension UIStoryboard {
     static var main: UIStoryboard {
@@ -43,55 +43,7 @@ public enum ModuleComponent: CaseIterable {
             return "登录"
         }
     }
-    
-//    var feature: Feature {
-//        return LoginFeature.self
-//    }
-    
-//    var associatedViewController: UIViewController {
-//
-//    }
-    
-//    var feature: Feature.Type {
-//        return LoginFeature.self
-        
-//        switch self {
-//        case .blog:
-//            return
-//        default:
-//            <#code#>
-//        }
-//    }
-    
 }
-
-//extension UIViewController {
-//
-//    @objc var currentViewController: UIViewController? {
-//        return self
-//    }
-//}
-//
-//extension UINavigationController {
-//
-//    @objc override var currentViewController: UIViewController? {
-//        return self.topViewController
-//    }
-//}
-//
-//extension UITabBarController {
-//
-//    @objc override var currentViewController: UIViewController? {
-//        return self.selectedViewController
-//    }
-//}
-//
-//extension UIPageViewController {
-//
-//    @objc override var currentViewController: UIViewController? {
-//        return self.viewControllers?.first
-//    }
-//}
 
 
 class MainViewController: UIPageViewController {
@@ -114,7 +66,7 @@ class MainViewController: UIPageViewController {
     
     private func configPageViewController() {
         
-        let blog = UINavigationController(rootViewController: HomeViewController())
+        let blog = UINavigationController(rootViewController: LoginViewController())
         let blog1 = UINavigationController(rootViewController: UIViewController())
         
         controllers = [blog, blog1]
@@ -137,10 +89,27 @@ class MainViewController: UIPageViewController {
     @objc func screenEdgePanGestureDidRecognize(gesture: UIScreenEdgePanGestureRecognizer) {
         
         guard self.presentedViewController == nil else { return }
-    
         let sideViewController = SideViewController.make()
+        sideViewController.transitioningDelegate = self
+        sideViewController.modalPresentationStyle = .custom
+
         present(sideViewController, animated: true, completion: nil)
-        
+
+    }
+}
+
+extension MainViewController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return nil
     }
 }
 
