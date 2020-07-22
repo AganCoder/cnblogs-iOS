@@ -12,24 +12,26 @@
 		8416AC6C236DD7F9003BF380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416AC6A236DD7F9003BF380 /* Main.storyboard */; };
 		8416AC6E236DD7FB003BF380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8416AC6D236DD7FB003BF380 /* Assets.xcassets */; };
 		8416AC71236DD7FB003BF380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416AC6F236DD7FB003BF380 /* LaunchScreen.storyboard */; };
-		844183AE236F1C9F006C344F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183AD236F1C9F006C344F /* MainViewController.swift */; };
 		844183C423707F6A006C344F /* CNBlog.h in Headers */ = {isa = PBXBuildFile; fileRef = 844183C223707F6A006C344F /* CNBlog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		844183C723707F6A006C344F /* CNBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; };
 		844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 844183C023707F6A006C344F /* CNBlog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		844183CE23707FFF006C344F /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183CD23707FFF006C344F /* SideViewController.swift */; };
-		8F19BE5F241E03F8002C8F43 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F19BE5E241E03F8002C8F43 /* Home.framework */; };
-		8F19BE60241E03F8002C8F43 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F19BE5E241E03F8002C8F43 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3923F12CD500BCED44 /* Compose.framework */; };
-		8FA8AE4023F12CD500BCED44 /* Compose.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3923F12CD500BCED44 /* Compose.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FA8AE4123F12CD500BCED44 /* Knowledge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */; };
-		8FA8AE4223F12CD500BCED44 /* Knowledge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3A23F12CD500BCED44 /* Knowledge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; };
-		8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE3C23F12CD500BCED44 /* Problem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		844183CE23707FFF006C344F /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844183CD23707FFF006C344F /* MineViewController.swift */; };
 		8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; };
 		8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA8AE7C23F1371500BCED44 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FB3413E23F97AA4008AECA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FB3413D23F97AA4008AECA8 /* README.md */; };
-		8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; };
-		8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC905E23F1822A00D3C044 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FDE72A924C80D790098E5EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72A824C80D790098E5EC /* LoginViewController.swift */; };
+		8FDE72AD24C810B40098E5EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72AC24C810B40098E5EC /* HomeViewController.swift */; };
+		8FDE72B124C811DF0098E5EC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72B024C811DF0098E5EC /* ComposeViewController.swift */; };
+		8FDE72B424C811FD0098E5EC /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72B324C811FD0098E5EC /* ProblemViewController.swift */; };
+		8FDE72B624C812260098E5EC /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE72B524C812260098E5EC /* Mine.storyboard */; };
+		8FDE72B824C812FC0098E5EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72B724C812FC0098E5EC /* MainViewController.swift */; };
+		8FDE72C024C8142B0098E5EC /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */; };
+		8FDE72C124C8142B0098E5EC /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */; };
+		8FDE72C324C8142B0098E5EC /* AnyHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */; };
+		8FDE72C424C8142B0098E5EC /* CBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */; };
+		8FDE72C524C8142B0098E5EC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */; };
+		8FDE72C624C8142B0098E5EC /* CBBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */; };
+		8FDE72C824C815BA0098E5EC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72C724C815BA0098E5EC /* UIViewController+Extension.swift */; };
 		AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,12 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				844183C823707F6A006C344F /* CNBlog.framework in Embed Frameworks */,
-				8FA8AE4623F12CD500BCED44 /* Problem.framework in Embed Frameworks */,
-				8FA8AE4023F12CD500BCED44 /* Compose.framework in Embed Frameworks */,
-				8F19BE60241E03F8002C8F43 /* Home.framework in Embed Frameworks */,
-				8FEC906023F1822A00D3C044 /* Login.framework in Embed Frameworks */,
 				8FA8AE7E23F1371500BCED44 /* Common.framework in Embed Frameworks */,
-				8FA8AE4223F12CD500BCED44 /* Knowledge.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,11 +71,10 @@
 		8416AC6D236DD7FB003BF380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8416AC70236DD7FB003BF380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8416AC72236DD7FB003BF380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		844183AD236F1C9F006C344F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		844183C023707F6A006C344F /* CNBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844183C223707F6A006C344F /* CNBlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNBlog.h; sourceTree = "<group>"; };
 		844183C323707F6A006C344F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		844183CD23707FFF006C344F /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		844183CD23707FFF006C344F /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8F19BE5E241E03F8002C8F43 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3823F12CD500BCED44 /* Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE3923F12CD500BCED44 /* Compose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Compose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +85,19 @@
 		8FA8AE7C23F1371500BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB3413D23F97AA4008AECA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8FDC05C5240018FA009EEF58 /* CnBlogs-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CnBlogs-iOS.entitlements"; sourceTree = "<group>"; };
+		8FDE72A824C80D790098E5EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8FDE72AC24C810B40098E5EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8FDE72B024C811DF0098E5EC /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		8FDE72B324C811FD0098E5EC /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
+		8FDE72B524C812260098E5EC /* Mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		8FDE72B724C812FC0098E5EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHomeController.swift; sourceTree = "<group>"; };
+		8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogViewController.swift; sourceTree = "<group>"; };
+		8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogController.swift; sourceTree = "<group>"; };
+		8FDE72C724C815BA0098E5EC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8FEC905E23F1822A00D3C044 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlog.release.xcconfig"; path = "Target Support Files/Pods-CNBlog/Pods-CNBlog.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,13 +109,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				844183C723707F6A006C344F /* CNBlog.framework in Frameworks */,
-				8FA8AE4523F12CD500BCED44 /* Problem.framework in Frameworks */,
-				8FA8AE3F23F12CD500BCED44 /* Compose.framework in Frameworks */,
 				8FA8AE7D23F1371500BCED44 /* Common.framework in Frameworks */,
-				8FA8AE4123F12CD500BCED44 /* Knowledge.framework in Frameworks */,
-				8FEC905F23F1822A00D3C044 /* Login.framework in Frameworks */,
 				AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */,
-				8F19BE5F241E03F8002C8F43 /* Home.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,14 +160,18 @@
 		8416AC63236DD7F9003BF380 /* CnBlogs-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE72AB24C80E980098E5EC /* Home */,
+				8FDE72B224C811EE0098E5EC /* Problem */,
+				8FDE72AF24C811CF0098E5EC /* Compose */,
+				8FDE72AE24C811B60098E5EC /* Mine */,
 				8FDC05C5240018FA009EEF58 /* CnBlogs-iOS.entitlements */,
 				8416AC64236DD7F9003BF380 /* AppDelegate.swift */,
 				8416AC6A236DD7F9003BF380 /* Main.storyboard */,
-				844183CD23707FFF006C344F /* SideViewController.swift */,
-				844183AD236F1C9F006C344F /* MainViewController.swift */,
 				8416AC6D236DD7FB003BF380 /* Assets.xcassets */,
 				8416AC6F236DD7FB003BF380 /* LaunchScreen.storyboard */,
 				8416AC72236DD7FB003BF380 /* Info.plist */,
+				8FDE72B724C812FC0098E5EC /* MainViewController.swift */,
+				8FDE72C724C815BA0098E5EC /* UIViewController+Extension.swift */,
 			);
 			path = "CnBlogs-iOS";
 			sourceTree = "<group>";
@@ -193,6 +201,46 @@
 				08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FDE72AB24C80E980098E5EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */,
+				8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */,
+				8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */,
+				8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */,
+				8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */,
+				8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */,
+				8FDE72AC24C810B40098E5EC /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8FDE72AE24C811B60098E5EC /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE72A824C80D790098E5EC /* LoginViewController.swift */,
+				844183CD23707FFF006C344F /* MineViewController.swift */,
+				8FDE72B524C812260098E5EC /* Mine.storyboard */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		8FDE72AF24C811CF0098E5EC /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE72B024C811DF0098E5EC /* ComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		8FDE72B224C811EE0098E5EC /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE72B324C811FD0098E5EC /* ProblemViewController.swift */,
+			);
+			path = Problem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +341,7 @@
 			files = (
 				8416AC71236DD7FB003BF380 /* LaunchScreen.storyboard in Resources */,
 				8416AC6E236DD7FB003BF380 /* Assets.xcassets in Resources */,
+				8FDE72B624C812260098E5EC /* Mine.storyboard in Resources */,
 				8FB3413E23F97AA4008AECA8 /* README.md in Resources */,
 				8416AC6C236DD7F9003BF380 /* Main.storyboard in Resources */,
 			);
@@ -376,8 +425,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844183AE236F1C9F006C344F /* MainViewController.swift in Sources */,
-				844183CE23707FFF006C344F /* SideViewController.swift in Sources */,
+				8FDE72B824C812FC0098E5EC /* MainViewController.swift in Sources */,
+				8FDE72B424C811FD0098E5EC /* ProblemViewController.swift in Sources */,
+				8FDE72C624C8142B0098E5EC /* CBBlogController.swift in Sources */,
+				8FDE72AD24C810B40098E5EC /* HomeViewController.swift in Sources */,
+				8FDE72C824C815BA0098E5EC /* UIViewController+Extension.swift in Sources */,
+				8FDE72A924C80D790098E5EC /* LoginViewController.swift in Sources */,
+				8FDE72B124C811DF0098E5EC /* ComposeViewController.swift in Sources */,
+				8FDE72C424C8142B0098E5EC /* CBBlogViewController.swift in Sources */,
+				8FDE72C524C8142B0098E5EC /* NewsViewController.swift in Sources */,
+				844183CE23707FFF006C344F /* MineViewController.swift in Sources */,
+				8FDE72C324C8142B0098E5EC /* AnyHomeController.swift in Sources */,
+				8FDE72C024C8142B0098E5EC /* BlogViewController.swift in Sources */,
+				8FDE72C124C8142B0098E5EC /* LibraryViewController.swift in Sources */,
 				8416AC65236DD7F9003BF380 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

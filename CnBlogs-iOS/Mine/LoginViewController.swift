@@ -19,16 +19,12 @@ struct CnBlogs {
     static let clientSecret = "Ka1IC6WD5K29nhz3DKu1H9-wYB1FKPMj7h9k7UAp6Qzvxk0dVoJe4g4lCf07FTjZRqj8eW6py2ApfDtS"
 }
 
-public class LoginFeature: Feature {
-            
-    public static var dependenciesInitializer: AnyInitializer {
-        return AnyInitializer(Empty.init)
-    }
-    
-    public static func build(dependencies: Empty) -> UIViewController {
+extension LoginViewController {
+    static func make() -> LoginViewController {
         return LoginViewController()
     }
 }
+
 
 public class LoginViewController: UIViewController, WKScriptMessageHandler {
     
@@ -76,8 +72,15 @@ public class LoginViewController: UIViewController, WKScriptMessageHandler {
         navigationItem.rightBarButtonItem = injectRightItem
         
         self.injectRightItem = injectRightItem
+
+        let closedItem = UIBarButtonItem(title: "𝖷", style: .plain, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = closedItem
     }
-    
+
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
+    }
+
     @objc func injectUserInfo() {
         
         let userName = "gaox_219";
@@ -138,9 +141,7 @@ public class LoginViewController: UIViewController, WKScriptMessageHandler {
         }
     }
     
-    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-    }
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {}
 }
 
 extension LoginViewController: WKNavigationDelegate {
@@ -198,11 +199,13 @@ extension LoginViewController: WKNavigationDelegate {
                 if case let .success(token) = Result(catching: { try decoder.decode(Token.self, from: data) }) {
                     debugPrint("acessToken: \(token)")
                     DispatchQueue.main.async { User.token = token }
+
+                    DispatchQueue.main.async { HUD.flash(.label("登录成功")); HUD.hide(afterDelay: 2.5) }
+
                 } else {
-                   fatalError() // Should not be here
+                    DispatchQueue.main.async { HUD.flash(.label("发生未知错误")); HUD.hide(afterDelay: 2.5) } // Should not be here
                 }
-                
-                DispatchQueue.main.async { HUD.flash(.label("登录成功")); HUD.hide(afterDelay: 2.5) }
+
             }.resume()
     
             return decisionHandler(.cancel)

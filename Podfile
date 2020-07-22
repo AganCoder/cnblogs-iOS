@@ -7,11 +7,14 @@ use_frameworks!
 
 workspace 'iCnblogs.xcworkspace'
 
-
 def workspace_pods
-
 	pod 'Alamofire'
+  pod 'Hero'
+end
 
+def login
+  pod "PromiseKit"
+  pod 'PKHUD', '~> 5.0'
 end
 
 
@@ -21,24 +24,13 @@ target 'CNBlog' do
 end
 
 target 'CnBlogs-iOS' do
+
+  login
   workspace_pods
-  pod 'PKHUD', '~> 5.0'
-  pod "PromiseKit"
-  pod 'Hero'
+
+
   # Pods for CnBlogs-iOS
 
 end
 
- 
-target 'Compose' do 
-	project 'Feature/Compose/Compose.xcodeproj'
 
-	workspace_pods
-end 
-
-
-target 'Login' do
-  project 'Feature/Login/Login.xcodeproj'
-  pod "PromiseKit"
-  pod 'PKHUD', '~> 5.0'
-end

@@ -1,19 +1,29 @@
 //
 //  ProblemViewController.swift
-//  Problem
+//  CnBlogs-iOS
 //
-//  Created by Noah-Normal on 2020/2/10.
-//  Copyright © 2020 Noah-Normal. All rights reserved.
+//  Created by Noah on 2020/7/22.
+//  Copyright © 2020 rsenjoyer. All rights reserved.
 //
 
 import UIKit
+
+extension ProblemViewController {
+
+    static func make() -> ProblemViewController {
+        return ProblemViewController()
+    }
+}
+
 
 class ProblemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let titleItem = self.navigationController?.navigationBar.topItem {
+            titleItem.title = "博问"
+        }
     }
     
 

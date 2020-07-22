@@ -1,22 +1,28 @@
 //
 //  ComposeViewController.swift
-//  Compose
+//  CnBlogs-iOS
 //
-//  Created by Noah-Normal on 2020/2/10.
-//  Copyright © 2020 Noah-Normal. All rights reserved.
+//  Created by Noah on 2020/7/22.
+//  Copyright © 2020 rsenjoyer. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-public class ComposeViewController: UIViewController {
+extension ComposeViewController {
+    static func make() -> ComposeViewController {
+        return ComposeViewController()
+    }
+}
 
-    override public func viewDidLoad() {
+
+class ComposeViewController: UIViewController {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
 
-//        Alamofire.request("https://www.baidu.com")
-        
-        // Do any additional setup after loading the view.
+        if let titleItem = self.navigationController?.navigationBar.topItem {
+            titleItem.title = "闪存"
+        }
     }
     
 

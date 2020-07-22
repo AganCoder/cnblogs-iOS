@@ -7,13 +7,8 @@
 //
 
 import UIKit
-import Login
 import Common
 
-
-protocol SideViewControllerDelegate: NSObjectProtocol {
-    func sideViewController(vc: SideViewController, didSelectedItem item: ModuleComponent)
-}
 
 public enum CellComponent: String {
     case logged
@@ -64,14 +59,20 @@ extension CellComponent {
     }
 }
 
-
-extension SideViewController {
-    static func make() -> SideViewController {
-        return UIStoryboard.main.instantiateViewController(withIdentifier: "SideViewController") as! SideViewController
+extension UIStoryboard {
+    static var main: UIStoryboard {
+        return UIStoryboard(name: "Mine", bundle: nil)
     }
 }
 
-class SideViewController: UIViewController {
+
+extension MineViewController {
+    static func make() -> MineViewController {
+        return UIStoryboard.main.instantiateInitialViewController() as! MineViewController
+    }
+}
+
+class MineViewController: UIViewController {
 
     var dataSoruce: [CellComponent] {
         return [.logged, .unlogged, .home, .knowledge, .problem, .setting]
@@ -87,10 +88,14 @@ class SideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let titleItem = self.navigationController?.navigationBar.topItem {
+            titleItem.title = "我的"
+        }
     }
 }
 
-extension SideViewController: UITableViewDataSource {
+extension MineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSoruce.count
@@ -127,14 +132,16 @@ extension SideViewController: UITableViewDataSource {
     }
 }
 
-extension SideViewController: UITableViewDelegate {
+extension MineViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.dataSoruce.object(at: indexPath.row)?.height ?? CGFloat.leastNonzeroMagnitude
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        RouterService.shared.present(toFeature: LoginFeature.self, fromView: self)
+
+        let login = LoginViewController.make().navWrapper()
+        present(login, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

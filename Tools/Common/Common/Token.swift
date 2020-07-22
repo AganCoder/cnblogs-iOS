@@ -20,14 +20,15 @@ public struct Token {
 
     public var refreshToken: String?
 }
-
-
 extension Token {
+
     public var isExpired: Bool {
-        return true
+        guard let expiresIn = self.expiresIn else {
+            return true
+        }
+        return expiresIn < Date()
     }
 }
-
 
 extension Token: Codable {
     public enum CodingKeys : String, CodingKey {
@@ -56,19 +57,18 @@ extension Token: Codable {
     }
 }
 
-extension Token: CustomDebugStringConvertible {
-    public var debugDescription: String {
-//        let accessToken = self.accessToken ?? ""
-//        let tokenType   = self.tokenType ?? ""
-//        let refreshToken = self.refreshToken ?? ""
-//        let expiresIn  = self.expiresIn ?? Data()
+extension Token: CustomStringConvertible, CustomDebugStringConvertible {
 
-        return self.accessToken ?? ""
-    }
-}
-
-extension Token: CustomStringConvertible {
     public var description: String {
-        return self.accessToken ?? ""
+        return self.debugDescription
+    }
+
+    public var debugDescription: String {
+        let accessToken = self.accessToken ?? ""
+        let tokenType   = self.tokenType ?? ""
+        let refreshToken = self.refreshToken ?? ""
+        let expiresIn   = self.expiresIn ?? Date()
+
+        return "accessToken: \(accessToken), tokenType: \(tokenType), refreshToken: \(refreshToken), expiresIn: \(expiresIn)"
     }
 }

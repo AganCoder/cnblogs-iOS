@@ -6,25 +6,6 @@
    </FileRef>
    <Group
       location = "container:"
-      name = "Feature">
-      <FileRef
-         location = "group:Feature/Problem/Problem.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Feature/Login/Login.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Feature/Knowledge/Knowledge.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Feature/Compose/Compose.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:/Users/noah-normal/Github/cnblogs-iOS/Feature/Blog/Home.xcodeproj">
-      </FileRef>
-   </Group>
-   <Group
-      location = "container:"
       name = "Commons">
       <FileRef
          location = "group:Tools/Common/Common.xcodeproj">

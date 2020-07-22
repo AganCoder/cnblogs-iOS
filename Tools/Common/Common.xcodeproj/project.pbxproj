@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F6318F823F4058F0075ED3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6318F723F4058F0075ED3D /* User.swift */; };
 		8F907542248A35E100FE63BF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F907541248A35E100FE63BF /* Token.swift */; };
+		8F907545248A3BAB00FE63BF /* User+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F907544248A3BAB00FE63BF /* User+Info.swift */; };
+		8F907547248A3F6B00FE63BF /* DefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F907546248A3F6B00FE63BF /* DefaultStorage.swift */; };
 		8FA8AE7423F136DC00BCED44 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA8AE7223F136DC00BCED44 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FA8AE7B23F136F300BCED44 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE7A23F136F300BCED44 /* Array+Extensions.swift */; };
 		8FA8AE8023F1377300BCED44 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8AE7F23F1377300BCED44 /* Feature.swift */; };
@@ -19,6 +21,9 @@
 /* Begin PBXFileReference section */
 		8F6318F723F4058F0075ED3D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F907541248A35E100FE63BF /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		8F907543248A37B600FE63BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8F907544248A3BAB00FE63BF /* User+Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Info.swift"; sourceTree = "<group>"; };
+		8F907546248A3F6B00FE63BF /* DefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStorage.swift; sourceTree = "<group>"; };
 		8FA8AE6F23F136DC00BCED44 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA8AE7223F136DC00BCED44 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		8FA8AE7323F136DC00BCED44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 				8FA8AE7323F136DC00BCED44 /* Info.plist */,
 				8F6318F723F4058F0075ED3D /* User.swift */,
 				8F907541248A35E100FE63BF /* Token.swift */,
+				8F907543248A37B600FE63BF /* README.md */,
+				8F907544248A3BAB00FE63BF /* User+Info.swift */,
+				8F907546248A3F6B00FE63BF /* DefaultStorage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -150,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA8AE9823F13CE400BCED44 /* RouterService.swift in Sources */,
+				8F907547248A3F6B00FE63BF /* DefaultStorage.swift in Sources */,
+				8F907545248A3BAB00FE63BF /* User+Info.swift in Sources */,
 				8FA8AE7B23F136F300BCED44 /* Array+Extensions.swift in Sources */,
 				8FA8AE8023F1377300BCED44 /* Feature.swift in Sources */,
 				8F907542248A35E100FE63BF /* Token.swift in Sources */,
