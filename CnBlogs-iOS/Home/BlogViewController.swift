@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BlogViewController: UIViewController {
+class BlogViewController: BaseViewController {
+
+    override var homeType: HomeController.HomeType { return .blog }
 
     override func viewDidLoad() {
         super.viewDidLoad()

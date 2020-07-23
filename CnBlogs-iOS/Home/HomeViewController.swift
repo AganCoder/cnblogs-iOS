@@ -17,6 +17,12 @@ extension HomeViewController {
 
 class HomeViewController: UIViewController {
 
+    var blogViewController: BlogViewController?
+    var newsViewController: NewsViewController?
+    var libraryViewController: LibraryViewController?
+
+    var controller: HomeController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

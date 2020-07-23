@@ -8,15 +8,15 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController {
+class LibraryViewController: BaseViewController {
+
+    override var homeType: HomeController.HomeType { return .library }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
+    
     /*
     // MARK: - Navigation
 

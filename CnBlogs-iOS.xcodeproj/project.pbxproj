@@ -28,9 +28,9 @@
 		8FDE72C024C8142B0098E5EC /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */; };
 		8FDE72C124C8142B0098E5EC /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */; };
 		8FDE72C324C8142B0098E5EC /* AnyHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */; };
-		8FDE72C424C8142B0098E5EC /* CBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */; };
+		8FDE72C424C8142B0098E5EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BD24C8142A0098E5EC /* BaseViewController.swift */; };
 		8FDE72C524C8142B0098E5EC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */; };
-		8FDE72C624C8142B0098E5EC /* CBBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */; };
+		8FDE72C624C8142B0098E5EC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72BF24C8142B0098E5EC /* HomeController.swift */; };
 		8FDE72C824C815BA0098E5EC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE72C724C815BA0098E5EC /* UIViewController+Extension.swift */; };
 		AA54FEF7BABCCB7B42EB7D4F /* Pods_CnBlogs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08601A6C1C7C87762DE73B2E /* Pods_CnBlogs_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -94,10 +94,11 @@
 		8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHomeController.swift; sourceTree = "<group>"; };
 		8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogViewController.swift; sourceTree = "<group>"; };
+		8FDE72BD24C8142A0098E5EC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
-		8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBBlogController.swift; sourceTree = "<group>"; };
+		8FDE72BF24C8142B0098E5EC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		8FDE72C724C815BA0098E5EC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		8FDE72CA24C8233A0098E5EC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8FEC905E23F1822A00D3C044 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E71AFE955F49C1971C568 /* Pods_CNBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1663C798653971C8681336B /* Pods-CNBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlog.release.xcconfig"; path = "Target Support Files/Pods-CNBlog/Pods-CNBlog.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,12 +207,12 @@
 		8FDE72AB24C80E980098E5EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE72CA24C8233A0098E5EC /* README.md */,
+				8FDE72C924C822B80098E5EC /* Model */,
 				8FDE72BE24C8142B0098E5EC /* BlogViewController.swift */,
 				8FDE72BC24C8142A0098E5EC /* NewsViewController.swift */,
 				8FDE72BB24C8142A0098E5EC /* LibraryViewController.swift */,
-				8FDE72BD24C8142A0098E5EC /* CBBlogViewController.swift */,
-				8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */,
-				8FDE72BF24C8142B0098E5EC /* CBBlogController.swift */,
+				8FDE72BD24C8142A0098E5EC /* BaseViewController.swift */,
 				8FDE72AC24C810B40098E5EC /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -241,6 +242,15 @@
 				8FDE72B324C811FD0098E5EC /* ProblemViewController.swift */,
 			);
 			path = Problem;
+			sourceTree = "<group>";
+		};
+		8FDE72C924C822B80098E5EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE72B924C8142A0098E5EC /* AnyHomeController.swift */,
+				8FDE72BF24C8142B0098E5EC /* HomeController.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,12 +437,12 @@
 			files = (
 				8FDE72B824C812FC0098E5EC /* MainViewController.swift in Sources */,
 				8FDE72B424C811FD0098E5EC /* ProblemViewController.swift in Sources */,
-				8FDE72C624C8142B0098E5EC /* CBBlogController.swift in Sources */,
+				8FDE72C624C8142B0098E5EC /* HomeController.swift in Sources */,
 				8FDE72AD24C810B40098E5EC /* HomeViewController.swift in Sources */,
 				8FDE72C824C815BA0098E5EC /* UIViewController+Extension.swift in Sources */,
 				8FDE72A924C80D790098E5EC /* LoginViewController.swift in Sources */,
 				8FDE72B124C811DF0098E5EC /* ComposeViewController.swift in Sources */,
-				8FDE72C424C8142B0098E5EC /* CBBlogViewController.swift in Sources */,
+				8FDE72C424C8142B0098E5EC /* BaseViewController.swift in Sources */,
 				8FDE72C524C8142B0098E5EC /* NewsViewController.swift in Sources */,
 				844183CE23707FFF006C344F /* MineViewController.swift in Sources */,
 				8FDE72C324C8142B0098E5EC /* AnyHomeController.swift in Sources */,

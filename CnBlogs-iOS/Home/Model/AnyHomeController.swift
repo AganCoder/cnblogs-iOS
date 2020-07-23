@@ -12,5 +12,3 @@ class AnyHomeController: NSObject {
     
 }
 
-
-

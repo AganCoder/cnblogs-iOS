@@ -8,13 +8,7 @@
 
 import UIKit
 
-public enum HomeType: String, CaseIterable {
-    case blog
-    case news
-    case library
-}
-
-extension HomeType: Hashable, Equatable {
+extension HomeController.HomeType: Hashable, Equatable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue)
@@ -22,19 +16,25 @@ extension HomeType: Hashable, Equatable {
 }
 
 @available(iOS 13, *)
-extension HomeType: Identifiable {
+extension HomeController.HomeType: Identifiable {
     
     public var id: String {
         return self.rawValue
     }
 }
 
+class HomeController: NSObject {
 
+    enum HomeType: String, CaseIterable {
+        case blog
+        case news
+        case library
+    }
 
-class CBHomeController: NSObject {
+    fileprivate var homes: [HomeType: AnyHomeController] = [:]
+
     
-    fileprivate var blogs: [HomeType: AnyHomeController] = [:]
-    
+
 //    subscript(type: HomeType) -> AnyHomeController {
 //
 //
