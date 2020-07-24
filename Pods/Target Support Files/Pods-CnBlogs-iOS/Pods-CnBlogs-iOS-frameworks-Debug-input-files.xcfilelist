@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-CnBlogs-iOS/Pods-CnBlogs-iOS-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
+${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
+${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
